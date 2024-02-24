@@ -12,8 +12,8 @@
   <div class="container">
     <div class="row no-gutters slider-text js-fullheight align-items-end justify-content-center">
       <div class="col-md-9 ftco-animate pb-5 text-center">
-         <p class="breadcrumbs"><span class="mr-2"><a href="index.html">Home <i class="fa fa-chevron-right"></i></a></span> <span>Tour List <i class="fa fa-chevron-right"></i></span></p>
-         <h1 class="mb-0 bread">Tours List</h1>
+         <p class="breadcrumbs"><span class="mr-2"><a href="index.html">Acceuil <i class="fa fa-chevron-right"></i></a></span> <span>Liste Des Visites <i class="fa fa-chevron-right"></i></span></p>
+         <h1 class="mb-0 bread">Liste des visites</h1>
      </div>
  </div>
 </div>
@@ -31,36 +31,11 @@
                          <label for="#">Destination</label>
                          <div class="form-field">
                            <div class="icon"><span class="fa fa-search"></span></div>
-                           <input type="text" class="form-control" placeholder="Search place">
+                           <input type="text" class="form-control" placeholder="Recherche Place">
                        </div>
                    </div>
                </div>
-       <div class="col-lg d-flex">
-          <div class="form-group p-4">
-             <label for="#">Price Limit</label>
-             <div class="form-field">
-               <div class="select-wrap">
-                <div class="icon"><span class="fa fa-chevron-down"></span></div>
-                <select name="" id="" class="form-control">
-                  <option value="">$5,000</option>
-                  <option value="">$10,000</option>
-                  <option value="">$50,000</option>
-                  <option value="">$100,000</option>
-                  <option value="">$200,000</option>
-                  <option value="">$300,000</option>
-                  <option value="">$400,000</option>
-                  <option value="">$500,000</option>
-                  <option value="">$600,000</option>
-                  <option value="">$700,000</option>
-                  <option value="">$800,000</option>
-                  <option value="">$900,000</option>
-                  <option value="">$1,000,000</option>
-                  <option value="">$2,000,000</option>
-              </select>
-          </div>
-      </div>
-  </div>
-</div>
+    
 <div class="col-lg d-flex">
   <div class="form-group d-flex w-100 border-0">
      <div class="form-field w-100 align-items-center d-flex">
@@ -80,7 +55,7 @@
    <div class="container">
    <div class="row justify-content-center pb-4">
 					<div class="col-md-12 heading-section text-center ftco-animate">
-						<span class="subheading">Destination</span>
+						<span class="subheading">Visites</span>
 						<h2 class="mb-4">Destination de la visite</h2>
 					</div>
 				</div>
@@ -91,7 +66,7 @@
         ?>
        <div class="col-md-4 ftco-animate">
           <div class="project-wrap">
-             <a href="#" class="img" style="background-image: url(images/destination-1.jpg);">
+             <a href="#" class="img" style="background-image: url(images/<?= $item["image"]; ?>);">
                 <span class="price"><?= $item["prix"]; ?>/person</span>
             </a>
             <div class="text p-4">
@@ -99,9 +74,8 @@
                 <h3><a href="#"><?= $item["nom"]; ?></a></h3>
                 <p class="location"><span class="fa fa-map-marker"></span> <?= $item["localisation"]; ?></p>
                 <ul>
-                   <li><span class="flaticon-shower"></span>2</li>
-                   <li><span class="flaticon-king-size"></span>3</li>
                    <li><span class="flaticon-mountains"></span><?= $item["type"]; ?></li>
+                   <li class="mb-0"><a href="#" class="btn btn-primary px-2 py-1">Réserver</a></li>
                </ul>
            </div>
        </div>
@@ -109,21 +83,7 @@
    <?php endforeach; ?>
           </div>
   
-<div class="row mt-5">
-  <div class="col text-center">
-    <div class="block-27">
-      <ul>
-        <li><a href="#">&lt;</a></li>
-        <li class="active"><span>1</span></li>
-        <li><a href="#">2</a></li>
-        <li><a href="#">3</a></li>
-        <li><a href="#">4</a></li>
-        <li><a href="#">5</a></li>
-        <li><a href="#">&gt;</a></li>
-    </ul>
-</div>
-</div>
-</div>
+
 </div>
 </section>
 <section class="ftco-intro ftco-section ftco-no-pt">

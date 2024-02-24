@@ -5,7 +5,7 @@
   <div class="container">
     <div class="row no-gutters slider-text js-fullheight align-items-end justify-content-center">
       <div class="col-md-9 ftco-animate pb-5 text-center">
-        <p class="breadcrumbs"><span class="mr-2"><a href="index.html">Home <i class="fa fa-chevron-right"></i></a></span> <span>Hotel <i class="fa fa-chevron-right"></i></span></p>
+        <p class="breadcrumbs"><span class="mr-2"><a href="index.html">Acceuil <i class="fa fa-chevron-right"></i></a></span> <span>Hébergement <i class="fa fa-chevron-right"></i></span></p>
         <h1 class="mb-0 bread">Hébergement</h1>
       </div>
     </div>
@@ -21,40 +21,14 @@
             <div class="row no-gutters">
               <div class="col-lg d-flex">
                 <div class="form-group p-4 border-0">
-                  <label for="#">Destination</label>
+                  <label for="#">Hébergement</label>
                   <div class="form-field">
                     <div class="icon"><span class="fa fa-search"></span></div>
-                    <input type="text" class="form-control" placeholder="Search place">
+                    <input type="text" class="form-control" placeholder="Recherche Hébergement">
                   </div>
                 </div>
               </div>
 
-              <div class="col-lg d-flex">
-                <div class="form-group p-4">
-                  <label for="#">Price Limit</label>
-                  <div class="form-field">
-                    <div class="select-wrap">
-                      <div class="icon"><span class="fa fa-chevron-down"></span></div>
-                      <select name="" id="" class="form-control">
-                        <option value="">$5,000</option>
-                        <option value="">$10,000</option>
-                        <option value="">$50,000</option>
-                        <option value="">$100,000</option>
-                        <option value="">$200,000</option>
-                        <option value="">$300,000</option>
-                        <option value="">$400,000</option>
-                        <option value="">$500,000</option>
-                        <option value="">$600,000</option>
-                        <option value="">$700,000</option>
-                        <option value="">$800,000</option>
-                        <option value="">$900,000</option>
-                        <option value="">$1,000,000</option>
-                        <option value="">$2,000,000</option>
-                      </select>
-                    </div>
-                  </div>
-                </div>
-              </div>
               <div class="col-lg d-flex">
                 <div class="form-group d-flex w-100 border-0">
                   <div class="form-field w-100 align-items-center d-flex">

@@ -10,9 +10,9 @@
     <div class="collapse navbar-collapse  w-auto " id="sidenav-collapse-main">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link text-white active bg-gradient-primary" href="dashboard.php">
+          <a class="nav-link text-white " href="dashboard.php">
             <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-              <i class="material-icons opacity-10">dashboard</i>
+              <i class="fa fa-dashboard"></i>
             </div>
             <span class="nav-link-text ms-1">Dashboard</span>
           </a>
@@ -20,7 +20,7 @@
         <li class="nav-item">
           <a class="nav-link text-white " href="user.php">
             <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-              <i class="material-icons opacity-10">table_view</i>
+              <i class="fa fa-user"></i>
             </div>
             <span class="nav-link-text ms-1">Utilisateur</span>
           </a>
@@ -28,7 +28,7 @@
         <li class="nav-item">
           <a class="nav-link text-white " href="destination.php">
             <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-              <i class="material-icons opacity-10">table_view</i>
+              <i class="fa fa-map"></i>
             </div>
             <span class="nav-link-text ms-1">Déstinations</span>
           </a>
@@ -36,7 +36,7 @@
         <li class="nav-item">
           <a class="nav-link text-white " href="hebergement.php">
             <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-              <i class="material-icons opacity-10">table_view</i>
+              <i class="fa fa-hotel"></i>
             </div>
             <span class="nav-link-text ms-1">Hébergements</span>
           </a>
@@ -44,16 +44,32 @@
         <li class="nav-item">
           <a class="nav-link text-white " href="reservation.php">
             <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-              <i class="material-icons opacity-10">table_view</i>
+              <i class="fa fa-file"></i>
             </div>
             <span class="nav-link-text ms-1">Réservations</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white " href="contact.php">
+            <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+              <i class="fa fa-envelope"></i>
+            </div>
+            <span class="nav-link-text ms-1">Contact</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white " href="feedback.php">
+            <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+              <i class="fa fa-star"></i>
+            </div>
+            <span class="nav-link-text ms-1">Témoignages</span>
           </a>
         </li>
       
         <li class="nav-item">
           <a class="nav-link text-white " href="notifications.php">
             <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-              <i class="material-icons opacity-10">notifications</i>
+              <i class="fa fa-bell"></i>
             </div>
             <span class="nav-link-text ms-1">Notifications</span>
           </a>
@@ -64,7 +80,7 @@
         <li class="nav-item">
           <a class="nav-link text-white " href="profile.php">
             <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-              <i class="material-icons opacity-10">person</i>
+              <i class="fa fa-user"></i>
             </div>
             <span class="nav-link-text ms-1">Profile</span>
           </a>
@@ -72,7 +88,7 @@
         <li class="nav-item">
           <a class="nav-link text-white " href="index.php">
             <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-              <i class="material-icons opacity-10">login</i>
+              <i class="fa fa-sign-in"></i>
             </div>
             <span class="nav-link-text ms-1">Sign In</span>
           </a>
@@ -80,7 +96,7 @@
         <li class="nav-item">
           <a class="nav-link text-white " href="sign-up.php">
             <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-              <i class="material-icons opacity-10">assignment</i>
+              <i class="fa fa-sign-out"></i>
             </div>
             <span class="nav-link-text ms-1">Sign Up</span>
           </a>

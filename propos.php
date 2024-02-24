@@ -83,19 +83,13 @@
 						<div class="item">
 							<div class="testimony-wrap py-4">
 								<div class="text">
-									<p class="star">
-										<span class="fa fa-star"></span>
-										<span class="fa fa-star"></span>
-										<span class="fa fa-star"></span>
-										<span class="fa fa-star"></span>
-										<span class="fa fa-star"></span>
-									</p>
+									
 									<p class="mb-4"><?= $item["Commentaire"]; ?></p>
 									<div class="d-flex align-items-center">
 										<div class="user-img" style="background-image: url(images/<?= $item["avatar"]; ?>)"></div>
 										<div class="pl-3">
 											<p class="name"><?= $item["nom"] . " " . $item["prenom"]; ?></p>
-											<span class="position">Marketing Manager</span>
+											
 										</div>
 									</div>
 								</div>

@@ -1,43 +1,36 @@
 <?php
 error_reporting(E_ALL);
-
-
-class feedbackfct
+class contactfct
 {
     private $db;
-
     public function __construct($db)
     {
         $this->db = $db;
     }
-    public function create($nom, $prenom, $image, $review)
+    public function create($name, $email, $sujet, $message)
     {
-        $nom = addslashes($nom);
-        $prenom = addslashes($prenom);
+        $name = addslashes($name);
+        $sujet = addslashes($sujet);
         $date = date('Y-m-d à H:i');
-        $query = mysqli_query($this->db, "INSERT INTO `feedback`(`nom`, `prenom`, `avatar`, `Commentaire`, `date`) VALUES ('$nom','$prenom','$image','$review','$date')");
+        $query = mysqli_query($this->db, "INSERT INTO `contact`(`nom`, `email`, `sujet`, `message`, `dateenvoi`, `etat`) VALUES ('$name','$email','$sujet','$message','$date',0)");
         if ($query) {
             return true;
         } else {
             return false;
         }
     }
- 
     public function read()
     {
-        
         $table = array();
-        
-        $query = mysqli_query($this->db, "SELECT * FROM `feedback`");
-       
+        $query = mysqli_query($this->db, "SELECT * FROM `contact`");
         while ($result = mysqli_fetch_array($query)) {
             $table[] = $result;
         }
         return $table;
     }
-    public function delete($idfeedback)
+    public function delete($idcontact)
     {
-        $query = mysqli_query($this->db, "DELETE FROM `feedback` WHERE `id`='$idfeedback'");
+        $query = mysqli_query($this->db, "DELETE FROM `contact` WHERE `id`='$idcontact'");
         if ($query) {
             return true;
         } else {
@@ -45,4 +38,3 @@ class feedbackfct
         }
     }
 }
-?>

@@ -10,9 +10,9 @@
 				<ul class="navbar-nav ml-auto">
 					<li class="nav-item"><a href="index.php" class="nav-link">Acceuil</a></li>
 					<li class="nav-item"><a href="propos.php" class="nav-link">A propos</a></li>
-					<li class="nav-item"><a href="destination.php" class="nav-link">Destination</a></li>
+					<li class="nav-item"><a href="destination.php" class="nav-link">Visite</a></li>
 					<li class="nav-item"><a href="hebergement.php" class="nav-link">Hébergement</a></li>
-					<li class="nav-item"><a href="blog.php" class="nav-link">Blog</a></li>
+					<li class="nav-item"><a href="blog.php" class="nav-link">Transport</a></li>
 					<li class="nav-item"><a href="contact.php" class="nav-link">Contact</a></li>
 					<li class="nav-item"><a href="connexion/index.php" class="btn btn-primary py-3 px-4">Connexion-Inscription</a></li>
 				</ul>

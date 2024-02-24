@@ -7,6 +7,7 @@ require_once("hebergementfct.php");
 require_once("userfct.php");
 require_once("feedbackfct.php");
 require_once("reservationfct.php");
+require_once("contactfct.php");
 
 
 
@@ -20,6 +21,7 @@ $hebergementfct= new hebergementfct($database->getConnectionDB());
 $userfct= new userfct($database->getConnectionDB());
 $feedbackfct= new feedbackfct($database->getConnectionDB());
 $reservationfct= new reservationfct($database->getConnectionDB());
+$contactfct= new contactfct($database->getConnectionDB());
 
 
 ?>
