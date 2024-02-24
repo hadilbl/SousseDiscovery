@@ -18,13 +18,7 @@
       <div class="col-md-12 heading-section text-center ftco-animate">
         <span class="subheading">Transport</span>
         <h2 class="mb-4">Sélectionnez Votre Transport</h2>
-        <p>Il existe une diversité de moyens de transport, allant des options publiques telles que les bus, les trains et les métros,
-          aux alternatives privées comme les voitures et les vélos.Chacun de ces modes offre ses propres avantages en termes de coût, d'accessibilité et de flexibilité,
-          répondant ainsi aux besoins variés des voyageurs. Cette variété permet aux individus de choisir le mode
-          de transport le mieux adapté à leurs besoins spécifiques et aux exigences de leur trajet.En outre, la location de voitures est une option populaire
-          offrant une flexibilité accrue pour les déplacements ponctuels ou les voyages à travers des régions où les transports en commun sont limités.
-          Les services de location offrent souvent une gamme de véhicules adaptés aux besoins spécifiques des clients, que ce soit pour des voyages d'affaires,
-          des vacances en famille. Cependant, il est important de prendre en compteles coûts supplémentaires tels que l'assurance et les frais de carburant lors de la planification d'un voyage en voiture de location.</p>
+        <p>Il existe une diversité de moyens de transport, allant des options publiques telles que les bus, les trains et les métros, aux alternatives privées comme les voitures et les vélos.Chacun de ces modes offre ses propres avantages en termes de coût, d'accessibilité et de flexibilité, répondant ainsi aux besoins variés des voyageurs. Cette variété permet aux individus de choisir le mode de transport le mieux adapté à leurs besoins spécifiques et aux exigences de leur trajet.En outre, la location de voitures est une option populaire offrant une flexibilité accrue pour les déplacements ponctuels ou les voyages à travers des régions où les transports en commun sont limités.</p><p>Les services de location offrent souvent une gamme de véhicules adaptés aux besoins spécifiques des clients, que ce soit pour des voyages d'affaires, des vacances en famille. Cependant, il est important de prendre en compteles coûts supplémentaires tels que l'assurance et les frais de carburant lors de la planification d'un voyage en voiture de location.</p>
       </div>
       <div class="row d-flex">
         <div class="col-md-6"><a href="#" class="btn btn-primary">Publiques</a></div>
