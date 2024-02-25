@@ -30,7 +30,7 @@
             <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
               <i class="fa fa-map"></i>
             </div>
-            <span class="nav-link-text ms-1">Déstinations</span>
+            <span class="nav-link-text ms-1">Visites</span>
           </a>
         </li>
         <li class="nav-item">
