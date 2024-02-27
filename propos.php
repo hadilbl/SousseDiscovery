@@ -17,7 +17,7 @@
 		<div class="row justify-content-center pb-4">
 			<div class="col-md-12 heading-section text-center ftco-animate">
 				<span class="subheading">Bienvenue à Sousse Discovery</span>
-				<p class="mb-4">Sousse Tour est un portail d'information sur le tourisme en Sousse.
+				<p class="mb-4">Sousse Discovery est un portail d'information sur le tourisme en Sousse.
 					Vous êtes passionné de voyages et à la recherche de séjours en Sousse?
 					Découvrez de plus près la destination Sousse ainsi que ses sublimes monuments, villes et paysages.
 					Profitez en un seul clic d’informations pratiques et de notre guide
@@ -26,12 +26,12 @@
 		</div>
 	</div>
 </section>
-<section class="ftco-section ftco-about img" style="background-image: url(images/bg_4.jpg);">
+<section class="ftco-section ftco-about img" style="background-image: url(images/sousse.jpg);">
 	<div class="overlay"></div>
 	<div class="container py-md-5">
 		<div class="row py-md-5">
 			<div class="col-md d-flex align-items-center justify-content-center">
-				<a href="https://vimeo.com/45830194" class="icon-video popup-vimeo d-flex align-items-center justify-content-center mb-4">
+				<a href="https://www.youtube.com/watch?v=3nEJAXoB4Mo" class="icon-video popup-vimeo d-flex align-items-center justify-content-center mb-4">
 					<span class="fa fa-play"></span>
 				</a>
 			</div>
@@ -45,7 +45,7 @@
 			<div class="col-md-12 about-intro">
 				<div class="row">
 					<div class="col-md-6 d-flex align-items-stretch">
-						<div class="img d-flex w-100 align-items-center justify-content-center" style="background-image:url(images/about-1.jpg);">
+						<div class="img d-flex w-100 align-items-center justify-content-center" style="background-image:url(images/bleu.webp);">
 						</div>
 					</div>
 					<div class="col-md-6 pl-md-5 py-5">
@@ -53,7 +53,9 @@
 							<div class="col-md-12 heading-section ftco-animate">
 								<span class="subheading">A Propos</span>
 								<h2 class="mb-4">Rendez Votre Visite Mémorable Et Sûre Avec Nous</h2>
-								<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
+								<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, 
+									there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics,
+									 a large language ocean.</p>
 								<p><a href="#" class="btn btn-primary">Book Your Destination</a></p>
 							</div>
 						</div>
@@ -96,10 +98,13 @@
 							</div>
 						</div>
 					<?php endforeach; ?>
+					
 				</div>
 			</div>
 		</div>
+		
 	</div>
+	
 </section>
 
 
@@ -111,7 +116,7 @@
 					<div class="overlay"></div>
 					<h2>We Are Pacific A Travel Agency</h2>
 					<p>We can manage your dream building A small river named Duden flows by their place</p>
-					<p class="mb-0"><a href="#" class="btn btn-primary px-4 py-3">Ask For A Quote</a></p>
+					<p class="mb-0"><a href="contact.php" class="btn btn-primary px-4 py-3">Contactez-Nous</a></p>
 				</div>
 			</div>
 		</div>

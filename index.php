@@ -277,8 +277,10 @@ require_once('head.php');
 							<div class="col-md-12 heading-section ftco-animate">
 								<span class="subheading">A Propos</span>
 								<h2 class="mb-4">Rendez Votre Visite Mémorable Et Sûre Avec Nous</h2>
-								<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
-								<p><a href="#" class="btn btn-primary">Book Your Destination</a></p>
+								<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, 
+									there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics,
+									 a large language ocean.</p>
+								<p><a href="propos.php" class="btn btn-primary">Lire Plus</a></p>
 							</div>
 						</div>
 					</div>
@@ -340,7 +342,7 @@ require_once('head.php');
 					<div class="overlay"></div>
 					<h2>We Are Pacific A Travel Agency</h2>
 					<p>We can manage your dream building A small river named Duden flows by their place</p>
-					<p class="mb-0"><a href="#" class="btn btn-primary px-4 py-3">Ask For A Quote</a></p>
+					<p class="mb-0"><a href="contact.php" class="btn btn-primary px-4 py-3">Contactez-Nous</a></p>
 				</div>
 			</div>
 		</div>
