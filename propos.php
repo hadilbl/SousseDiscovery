@@ -70,8 +70,8 @@
 	<div class="container">
 		<div class="row justify-content-center pb-4">
 			<div class="col-md-7 text-center heading-section heading-section-white ftco-animate">
-				<span class="subheading">Testimonial</span>
-				<h2 class="mb-4">Tourist Feedback</h2>
+			<span class="subheading">Témoignages</span>
+				<h2 class="mb-4">Témoignages des touristes</h2>
 			</div>
 		</div>
 
@@ -106,13 +106,13 @@
 	</div>
 	
 </section>
-
+<a  href="témoignage.php" class="btn btn-primary py-3 px-5">Donner votre témoignage</a>
 
 <section class="ftco-intro ftco-section ftco-no-pt mt-5">
 	<div class="container">
 		<div class="row justify-content-center">
 			<div class="col-md-12 text-center">
-				<div class="img" style="background-image: url(images/bg_2.jpg);">
+				<div class="img" style="background-image: url(images/sousse1.jpg);">
 					<div class="overlay"></div>
 					<h2>We Are Pacific A Travel Agency</h2>
 					<p>We can manage your dream building A small river named Duden flows by their place</p>

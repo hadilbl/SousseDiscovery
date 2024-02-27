@@ -338,7 +338,7 @@ require_once('head.php');
 	<div class="container">
 		<div class="row justify-content-center">
 			<div class="col-md-12 text-center">
-				<div class="img" style="background-image: url(images/bg_2.jpg);">
+				<div class="img" style="background-image: url(images/sousse1.jpg);">
 					<div class="overlay"></div>
 					<h2>We Are Pacific A Travel Agency</h2>
 					<p>We can manage your dream building A small river named Duden flows by their place</p>

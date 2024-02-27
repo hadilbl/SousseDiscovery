@@ -66,10 +66,10 @@
       <div class="col-md-6 order-md-last d-flex">
         <form action="#" method='post' class="bg-light p-5 contact-form">
           <div class="form-group">
-            <input type="text" name='nom' class="form-control" required placeholder="votre nom">
+            <input type="text" name='nom' class="form-control" required placeholder="Nom">
           </div>
           <div class="form-group">
-            <input type="email" name='email' class="form-control" required placeholder=" Email">
+            <input type="email" name='email' class="form-control" required placeholder="Email">
           </div>
           <div class="form-group">
             <input type="text" name='sujet' class="form-control" required placeholder="Sujet">
