@@ -90,72 +90,22 @@ require_once('head.php');
 		<div class="row">
 			<div class="col-md-12">
 				<div class="carousel-destination owl-carousel ftco-animate">
-					<!-- <?php
+					 <?php
 							$all = $destinationfct->read2();
 							foreach ($all as $i => $item) :
 							?>
 						<div class="item">
 							<div class="project-destination">
-								<a href="#" class="img" style="background-image: url(images/kantaoui.webp);">
+								<a href="#" class="img" style="background-image: url(images/<?= $item["image"]; ?>);">
 									<div class="text">
-										<h3>Kantaoui</h3>
+										<h3><?= $item["nom"]; ?></h3>
 										<span>3 Tours</span>
 									</div>
 								</a>
 							</div>
 						</div>
-					<?php endforeach; ?> -->
+					<?php endforeach; ?> 
 
-					<div class="item">
-						<div class="project-destination">
-							<a href="#" class="img" style="background-image: url(images/kantaoui.webp);">
-								<div class="text">
-									<h3>Kantaoui</h3>
-									<span>3 Tours</span>
-								</div>
-							</a>
-						</div>
-					</div>
-					<div class="item">
-						<div class="project-destination">
-							<a href="#" class="img" style="background-image: url(images/hergla.avif);">
-								<div class="text">
-									<h3>Hergla</h3>
-									<span>2 Tours</span>
-								</div>
-							</a>
-						</div>
-					</div>
-					<div class="item">
-						<div class="project-destination">
-							<a href="#" class="img" style="background-image: url(images/sousse1.jpg);">
-								<div class="text">
-									<h3>Madina</h3>
-									<span>5 Tours</span>
-								</div>
-							</a>
-						</div>
-					</div>
-					<div class="item">
-						<div class="project-destination">
-							<a href="#" class="img" style="background-image: url(images/mall.png);">
-								<div class="text">
-									<h3>Sidi Bou Ali</h3>
-									<span>5 Tours</span>
-								</div>
-							</a>
-						</div>
-					</div>
-					<div class="item">
-						<div class="project-destination">
-							<a href="#" class="img" style="background-image: url(images/place-5.jpg);">
-								<div class="text">
-									<h3>Kalaa Kbira</h3>
-									<span>7 Tours</span>
-								</div>
-							</a>
-						</div>
-					</div>
 				</div>
 			</div>
 		</div>
@@ -171,81 +121,33 @@ require_once('head.php');
 			</div>
 		</div>
 		<div class="row">
+		<?php
+							$all = $hebergementfct->read2();
+							foreach ($all as $i => $item) :
+							?>
 			<div class="col-md-4 ftco-animate">
 				<div class="project-wrap hotel">
-					<a href="#" class="img" style="background-image: url(images/movinpick.avif);">
-						<span class="price">219dt/personne</span>
+				
+					<a href="#" class="img" style="background-image: url(images/<?= $item["image"]; ?>);">
+						<span class="price"><?= $item["prix"]; ?> /personne</span>
 					</a>
 					<div class="text p-4">
-						<p class="star mb-2">
-							<span class="fa fa-star"></span>
-							<span class="fa fa-star"></span>
-							<span class="fa fa-star"></span>
-							<span class="fa fa-star"></span>
-							<span class="fa fa-star"></span>
-						</p>
+						
 						<span class="days">8 Days Tour</span>
-						<h3><a href="#">Mövenpick</a></h3>
-						<p class="location"><span class="fa fa-map-marker"></span> Bd du 14 Janvier, Sousse </p>
+						<h3><a href="#"><?= $item["nom"]; ?></a></h3>
+						<p class="location"><span class="fa fa-map-marker"></span> <?= $item["localisation"]; ?> </p>
 						<ul>
 							<li><span class="flaticon-shower"></span>2</li>
 							<li><span class="flaticon-king-size"></span>3</li>
-							<li><span class="flaticon-mountains"></span>Prés de la plage</li>
+							<li><span class="flaticon-mountains"></span><?= $item["type"]; ?></li>
 						</ul>
 					</div>
+					
 				</div>
 			</div>
-			<div class="col-md-4 ftco-animate">
-				<div class="project-wrap hotel">
-					<a href="#" class="img" style="background-image: url(images/hote1.jpg);">
-						<span class="price">219dt/personne</span>
-					</a>
-					<div class="text p-4">
-						<p class="star mb-2">
-							<span class="fa fa-star"></span>
-							<span class="fa fa-star"></span>
-							<span class="fa fa-star"></span>
-							<span class="fa fa-star"></span>
-							<span class="fa fa-star"></span>
-						</p>
-						<span class="days">10 Days Tour</span>
-						<h3><a href="#">Dar Badiaa</a></h3>
-						<p class="location"><span class="fa fa-map-marker"></span> Sidi Bouraoui, 20 rue mosquée Hanafia, Sousse</p>
-						<ul>
-							<li><span class="flaticon-shower"></span>2</li>
-							<li><span class="flaticon-king-size"></span>3</li>
-							<li><span class="flaticon-sun-umbrella"></span>Prés de la plage</li>
-						</ul>
-					</div>
-				</div>
-			</div>
-			<div class="col-md-4 ftco-animate">
-				<div class="project-wrap hotel">
-					<a href="#" class="img" style="background-image: url(images/palace.avif);">
-						<span class="price">214dt/personne</span>
-					</a>
-					<div class="text p-4">
-						<p class="star mb-2">
-							<span class="fa fa-star"></span>
-							<span class="fa fa-star"></span>
-							<span class="fa fa-star"></span>
-							<span class="fa fa-star"></span>
-							<span class="fa fa-star"></span>
-						</p>
-						<span class="days">7 Days Tour</span>
-						<h3><a href="#">Sousse Palace Hotel & Spa</a></h3>
-						<p class="location"><span class="fa fa-map-marker"></span> Av. Habib Bourguiba, Sousse</p>
-						<ul>
-							<li><span class="flaticon-shower"></span>2</li>
-							<li><span class="flaticon-king-size"></span>3</li>
-							<li><span class="flaticon-sun-umbrella"></span>Prés de la plage</li>
-						</ul>
-					</div>
-				</div>
-			</div>
-
-
+			<?php endforeach; ?> 
 		</div>
+	</div>
 </section>
 
 
@@ -277,9 +179,9 @@ require_once('head.php');
 							<div class="col-md-12 heading-section ftco-animate">
 								<span class="subheading">A Propos</span>
 								<h2 class="mb-4">Rendez Votre Visite Mémorable Et Sûre Avec Nous</h2>
-								<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, 
+								<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia,
 									there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics,
-									 a large language ocean.</p>
+									a large language ocean.</p>
 								<p><a href="propos.php" class="btn btn-primary">Lire Plus</a></p>
 							</div>
 						</div>
@@ -332,6 +234,7 @@ require_once('head.php');
 		</div>
 	</div>
 </section>
+<div class="row justify-content-center"><a href="témoignage.php" class="btn btn-primary py-3 px-5 ">Donner votre témoignage</a></div>
 
 
 <section class="ftco-intro ftco-section ftco-no-pt mt-5">

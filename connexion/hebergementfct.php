@@ -23,6 +23,15 @@ class hebergementfct
         }
         return $table;
     }
+    public function read2()
+    {
+        $table = array();
+        $query = mysqli_query($this->db, "SELECT * FROM `hebergement` limit 3");
+        while ($result = mysqli_fetch_array($query)) {
+            $table[] = $result;
+        }
+        return $table;
+    }
     public function update($idhebergement,$nom,$localisation,$prix, $type)
 {
     $query = mysqli_query($this->db, "UPDATE `hebergement` SET `nom`='$nom', `localisation`='$localisation' ,`prix`='$prix',`type`='$type'  WHERE `id`='$idhebergement'");

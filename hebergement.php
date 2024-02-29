@@ -71,8 +71,9 @@
                 <li><span class="flaticon-shower"></span>2</li>
                 <li><span class="flaticon-king-size"></span>3</li>
                 <li><span class="flaticon-sun-umbrella"></span><?= $item["type"]; ?></li>
+                <li class="mb-0"><a href="#" class="btn btn-primary  px-2 py-1">Réserver</a></li>
               </ul>
-            </div>
+                          </div>
           </div>
         </div>
       <?php endforeach; ?>
@@ -84,7 +85,7 @@
   <div class="container">
     <div class="row justify-content-center">
       <div class="col-md-12 text-center">
-        <div class="img" style="background-image: url(images/bg_2.jpg);">
+        <div class="img" style="background-image: url(images/sousse1.jpg);">
           <div class="overlay"></div>
           <h2>We Are Pacific A Travel Agency</h2>
           <p>We can manage your dream building A small river named Duden flows by their place</p>

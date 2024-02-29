@@ -17,11 +17,12 @@
 		<div class="row justify-content-center pb-4">
 			<div class="col-md-12 heading-section text-center ftco-animate">
 				<span class="subheading">Bienvenue à Sousse Discovery</span>
-				<p class="mb-4">Sousse Discovery est un portail d'information sur le tourisme en Sousse.
-					Vous êtes passionné de voyages et à la recherche de séjours en Sousse?
-					Découvrez de plus près la destination Sousse ainsi que ses sublimes monuments, villes et paysages.
-					Profitez en un seul clic d’informations pratiques et de notre guide
-					d'hôtels sélectionnés et adaptés à tous vos besoins.</p>
+				<p class="mb-4">Bienvenue sur Sousse Discovery, votre guide ultime pour explorer la magnifique ville de Sousse et ses environs !
+					Notre site a été conçu pour offrir une expérience immersive et informative aux visiteurs intéressés par la découverte des trésors cachés de cette région historique de la Tunisie.
+					Que vous soyez un passionné d'histoire, un amateur de plages ensoleillées ou un aventurier avide d'explorer de nouveaux horizons, notre plateforme regorge de ressources pour rendre votre séjour inoubliable.
+					Nous nous engageons à fournir des informations précises, des recommandations personnalisées et des conseils pratiques pour vous aider à planifier votre voyage avec facilité. Explorez nos différentes sections
+					pour découvrir les meilleurs sites touristiques, les hébergements de charme, les activités passionnantes et bien plus encore. Que votre voyage commence dès maintenant !</p>
+
 			</div>
 		</div>
 	</div>
@@ -53,10 +54,12 @@
 							<div class="col-md-12 heading-section ftco-animate">
 								<span class="subheading">A Propos</span>
 								<h2 class="mb-4">Rendez Votre Visite Mémorable Et Sûre Avec Nous</h2>
-								<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, 
-									there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics,
-									 a large language ocean.</p>
-								<p><a href="#" class="btn btn-primary">Book Your Destination</a></p>
+								<p> Discovery est un portail d'information sur le tourisme en Sousse.
+									Vous êtes passionné de voyages et à la recherche de séjours en Sousse?
+									Découvrez de plus près la destination Sousse ainsi que ses sublimes monuments, villes et paysages.
+									Profitez en un seul clic d’informations pratiques et de notre guide
+									d'hôtels sélectionnés et adaptés à tous vos besoins.</p>
+
 							</div>
 						</div>
 					</div>
@@ -70,7 +73,7 @@
 	<div class="container">
 		<div class="row justify-content-center pb-4">
 			<div class="col-md-7 text-center heading-section heading-section-white ftco-animate">
-			<span class="subheading">Témoignages</span>
+				<span class="subheading">Témoignages</span>
 				<h2 class="mb-4">Témoignages des touristes</h2>
 			</div>
 		</div>
@@ -85,28 +88,27 @@
 						<div class="item">
 							<div class="testimony-wrap py-4">
 								<div class="text">
-									
+
 									<p class="mb-4"><?= $item["Commentaire"]; ?></p>
 									<div class="d-flex align-items-center">
 										<div class="user-img" style="background-image: url(images/<?= $item["avatar"]; ?>)"></div>
 										<div class="pl-3">
 											<p class="name"><?= $item["nom"] . " " . $item["prenom"]; ?></p>
-											
+
 										</div>
 									</div>
 								</div>
 							</div>
 						</div>
 					<?php endforeach; ?>
-					
+
 				</div>
 			</div>
 		</div>
-		
 	</div>
-	
+
 </section>
-<a  href="témoignage.php" class="btn btn-primary py-3 px-5">Donner votre témoignage</a>
+<div class="row justify-content-center"><a href="témoignage.php" class="btn btn-primary py-3 px-5 ">Donner votre témoignage</a></div>
 
 <section class="ftco-intro ftco-section ftco-no-pt mt-5">
 	<div class="container">

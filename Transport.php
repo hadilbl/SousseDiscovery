@@ -21,8 +21,8 @@
         <p>Il existe une diversité de moyens de transport, allant des options publiques telles que les bus, les trains et les métros, aux alternatives privées comme les voitures et les vélos.Chacun de ces modes offre ses propres avantages en termes de coût, d'accessibilité et de flexibilité, répondant ainsi aux besoins variés des voyageurs. Cette variété permet aux individus de choisir le mode de transport le mieux adapté à leurs besoins spécifiques et aux exigences de leur trajet.En outre, la location de voitures est une option populaire offrant une flexibilité accrue pour les déplacements ponctuels ou les voyages à travers des régions où les transports en commun sont limités.</p><p>Les services de location offrent souvent une gamme de véhicules adaptés aux besoins spécifiques des clients, que ce soit pour des voyages d'affaires, des vacances en famille. Cependant, il est important de prendre en compteles coûts supplémentaires tels que l'assurance et les frais de carburant lors de la planification d'un voyage en voiture de location.</p>
       </div>
       <div class="row d-flex">
-        <div class="col-md-6"><a href="#" class="btn btn-primary">Publiques</a></div>
-        <div class="col-md-6"><a href="#" class="btn btn-primary">Privées</a></div>
+        <div class="col-md-6"><a href="transportpub.php" class="btn btn-primary">Publiques</a></div>
+        <div class="col-md-6"><a href="transportp.php" class="btn btn-primary">Privés</a></div>
       </div>
     </div>
   </div>
@@ -35,11 +35,11 @@
   <div class="container">
     <div class="row justify-content-center">
       <div class="col-md-12 text-center">
-        <div class="img" style="background-image: url(images/bg_2.jpg);">
+        <div class="img" style="background-image: url(images/sousse1.jpg);">
           <div class="overlay"></div>
           <h2>We Are Pacific A Travel Agency</h2>
           <p>We can manage your dream building A small river named Duden flows by their place</p>
-          <p class="mb-0"><a href="#" class="btn btn-primary px-4 py-3">Ask For A Quote</a></p>
+          <p class="mb-0"><a href="contact.php" class="btn btn-primary px-4 py-3">Contactez-Nous</a></p>
         </div>
       </div>
     </div>

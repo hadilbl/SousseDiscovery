@@ -19,7 +19,7 @@ class destinationfct
     public function read2()
     {
         $table = array();
-        $query = mysqli_query($this->db, "SELECT * FROM `destination` limit 9");
+        $query = mysqli_query($this->db, "SELECT * FROM `destination` limit 5");
         while ($result = mysqli_fetch_array($query)) {
             $table[] = $result;
         }
