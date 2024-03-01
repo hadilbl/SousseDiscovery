@@ -11,10 +11,8 @@
         </div>
     </div>
 </section>
-
 <section class="ftco-section">
     <div class="container">
-
         <div class="row d-flex">
             <?php
             $all = $transportfct->read();
