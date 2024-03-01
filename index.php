@@ -27,9 +27,9 @@ require_once('head.php');
 				<div class="w-100">
 					<span class="subheading">Bienvenue à Sousse Discovery</span>
 					<h2 class="mb-4">Il est le temps de commencer votre aventure</h2>
-					<p>A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
-					<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.
-						A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
+					<p> Bienvenue à Sousse Discovery, votre guide ultime pour explorer tous les trésors cachés de la magnifique ville de Sousse et de ses environs.</p>
+					<p>	Plongez dans une expérience immersive où chaque coin de rue révèle une nouvelle histoire, une nouvelle découverte à faire.
+						Préparez-vous à vivre des moments inoubliables et à créer des souvenirs durables alors que vous embarquez pour une aventure passionnante avec Sousse Discovery.</p>
 					<p><a href="#" class="btn btn-primary py-3 px-4">Search Destination</a></p>
 				</div>
 			</div>
@@ -40,7 +40,7 @@ require_once('head.php');
 							<div class="icon d-flex align-items-center justify-content-center"><span class="flaticon-paragliding"></span></div>
 							<div class="media-body">
 								<h3 class="heading mb-3">Activities</h3>
-								<p>A small river named Duden flows by their place and supplies it with the necessary</p>
+								<p>Découvrez et explorez une variété d'activités passionnantes à Sousse et ses environs grâce à Sousse Discovery.</p>
 							</div>
 						</div>
 					</div>
@@ -48,26 +48,27 @@ require_once('head.php');
 						<div class="services services-1 color-2 d-block img" style="background-image: url(images/cheval.jpg);">
 							<div class="icon d-flex align-items-center justify-content-center"><span class="flaticon-route"></span></div>
 							<div class="media-body">
-								<h3 class="heading mb-3">Travel Arrangements</h3>
-								<p>A small river named Duden flows by their place and supplies it with the necessary</p>
+								<h3 class="heading mb-3">Préparatifs De Visite</h3>
+								<p>Planifiez votre séjour à Sousse en toute simplicité avec les outils de préparation de visite de Sousse Discovery.</p>
 							</div>
 						</div>
 					</div>
 					<div class="col-md-12 col-lg-6 d-flex align-self-stretch ftco-animate">
-						<div class="services services-1 color-3 d-block img" style="background-image: url(images/services-3.jpg);">
+						<div class="services services-1 color-3 d-block img" style="background-image: url(images/visite.jpg);">
 							<div class="icon d-flex align-items-center justify-content-center"><span class="flaticon-tour-guide"></span></div>
 							<div class="media-body">
 								<h3 class="heading mb-3">Visite Guidées</h3>
-								<p>A small river named Duden flows by their place and supplies it with the necessary</p>
+								<p>Découvrez Sousse sous un nouvel angle avec nos visites guidées passionnantes et informatives.</p>
 							</div>
 						</div>
 					</div>
 					<div class="col-md-12 col-lg-6 d-flex align-self-stretch ftco-animate">
-						<div class="services services-1 color-4 d-block img" style="background-image: url(images/services-4.jpg);">
+						<div class="services services-1 color-4 d-block img" style="background-image: url(images/transport.webp);">
 							<div class="icon d-flex align-items-center justify-content-center"><span class="flaticon-map"></span></div>
 							<div class="media-body">
-								<h3 class="heading mb-3">Hébergement</h3>
-								<p>A small river named Duden flows by their place and supplies it with the necessary</p>
+								<h3 class="heading mb-3">Transport</h3>
+								<p>Facilitez vos déplacements avec notre service de transport fiable et efficace,
+									disponible pour vous transporter où vous le souhaitez, quand vous le souhaitez.</p>
 							</div>
 						</div>
 					</div>
@@ -90,10 +91,10 @@ require_once('head.php');
 		<div class="row">
 			<div class="col-md-12">
 				<div class="carousel-destination owl-carousel ftco-animate">
-					 <?php
-							$all = $destinationfct->read2();
-							foreach ($all as $i => $item) :
-							?>
+					<?php
+					$all = $destinationfct->read2();
+					foreach ($all as $i => $item) :
+					?>
 						<div class="item">
 							<div class="project-destination">
 								<a href="#" class="img" style="background-image: url(images/<?= $item["image"]; ?>);">
@@ -104,7 +105,7 @@ require_once('head.php');
 								</a>
 							</div>
 						</div>
-					<?php endforeach; ?> 
+					<?php endforeach; ?>
 
 				</div>
 			</div>
@@ -121,31 +122,31 @@ require_once('head.php');
 			</div>
 		</div>
 		<div class="row">
-		<?php
-							$all = $hebergementfct->read2();
-							foreach ($all as $i => $item) :
-							?>
-			<div class="col-md-4 ftco-animate">
-				<div class="project-wrap hotel">
-				
-					<a href="#" class="img" style="background-image: url(images/<?= $item["image"]; ?>);">
-						<span class="price"><?= $item["prix"]; ?> /personne</span>
-					</a>
-					<div class="text p-4">
-						
-						<span class="days">8 Days Tour</span>
-						<h3><a href="#"><?= $item["nom"]; ?></a></h3>
-						<p class="location"><span class="fa fa-map-marker"></span> <?= $item["localisation"]; ?> </p>
-						<ul>
-							<li><span class="flaticon-shower"></span>2</li>
-							<li><span class="flaticon-king-size"></span>3</li>
-							<li><span class="flaticon-mountains"></span><?= $item["type"]; ?></li>
-						</ul>
+			<?php
+			$all = $hebergementfct->read2();
+			foreach ($all as $i => $item) :
+			?>
+				<div class="col-md-4 ftco-animate">
+					<div class="project-wrap hotel">
+
+						<a href="#" class="img" style="background-image: url(images/<?= $item["image"]; ?>);">
+							<span class="price"><?= $item["prix"]; ?> /personne</span>
+						</a>
+						<div class="text p-4">
+
+							<span class="days">8 Days Tour</span>
+							<h3><a href="#"><?= $item["nom"]; ?></a></h3>
+							<p class="location"><span class="fa fa-map-marker"></span> <?= $item["localisation"]; ?> </p>
+							<ul>
+								<li><span class="flaticon-shower"></span>2</li>
+								<li><span class="flaticon-king-size"></span>3</li>
+								<li><span class="flaticon-mountains"></span><?= $item["type"]; ?></li>
+							</ul>
+						</div>
+
 					</div>
-					
 				</div>
-			</div>
-			<?php endforeach; ?> 
+			<?php endforeach; ?>
 		</div>
 	</div>
 </section>
@@ -179,9 +180,8 @@ require_once('head.php');
 							<div class="col-md-12 heading-section ftco-animate">
 								<span class="subheading">A Propos</span>
 								<h2 class="mb-4">Rendez Votre Visite Mémorable Et Sûre Avec Nous</h2>
-								<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia,
-									there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics,
-									a large language ocean.</p>
+								<p>Notre mission est de vous offrir une expérience touristique exceptionnelle, 
+									en mettant l'accent sur la qualité, la sécurité et le confort tout au long de votre séjour.</p>
 								<p><a href="propos.php" class="btn btn-primary">Lire Plus</a></p>
 							</div>
 						</div>

@@ -10,7 +10,7 @@ class transportfct
     public function read()
     {
         $table = array();
-        $query = mysqli_query($this->db, "SELECT * FROM `transport`");
+        $query = mysqli_query($this->db, "SELECT * FROM `transport` WHERE type = 'transport publique'");
         while ($result = mysqli_fetch_array($query)) {
             $table[] = $result;
         }
@@ -19,7 +19,7 @@ class transportfct
     public function read2()
     {
         $table = array();
-        $query = mysqli_query($this->db, "SELECT * FROM `transport`");
+        $query = mysqli_query($this->db, "SELECT * FROM `transport` WHERE type = 'transport privé'");
         while ($result = mysqli_fetch_array($query)) {
             $table[] = $result;
         }
