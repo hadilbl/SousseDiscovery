@@ -12,7 +12,7 @@
  
         if (isset($_POST['update'])) {
                 $idreservation = $_POST['update'];
-                echo ($reservationfct->update($_POST['id'], $_POST['idclt'],$_POST['idhebergement'],$_POST['iddestination'] )) ? $success : $danger;
+                echo ($reservationfct->update($idreservation,$_POST['idfor'], $_POST['type'],$_POST['datereservation'],$_POST['periode'] )) ? $success : $danger;
             }
             
             if (isset($_POST['delete'])) {
@@ -32,10 +32,10 @@
                 <table class="table align-items-center justify-content-center mb-0">
                   <thead>
                     <tr>
-                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">reservation</th>
-                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">idclient</th>
-                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">idhebergement</th>
-                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder text-center opacity-7 ps-2">iddestination</th>
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Reservation</th>
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Type</th>
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Date reservation</th>
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder text-center opacity-7 ps-2">Periode</th>
                       <th></th>
                     </tr>
                   </thead>
@@ -58,17 +58,17 @@
                       </td>
                       <td class="align-middle text-center">
                         <div class="d-flex align-items-center justify-content-center">
-                          <span class="me-2 text-xs font-weight-bold"><?= $item["idclt"]; ?></span>
+                          <span class="me-2 text-xs font-weight-bold"><?= $item["idfor"]; ?></span>
                           
                         </div>
                       </td>
 
                       <td>
-                        <span class="text-xs font-weight-bold"><?= $item["idhebergement"]; ?></span>
+                        <span class="text-xs font-weight-bold"><?= $item["datereservation"]; ?></span>
                       </td>
 
                       <td>
-                        <p class="text-sm font-weight-bold mb-0"><?= $item["iddestination"]; ?></p>
+                        <p class="text-sm font-weight-bold mb-0"><?= $item["periode"]; ?></p>
                       </td>
                     
                       <td class="align-middle">
@@ -180,26 +180,10 @@
       <?php require_once('footerd.php'); ?>
     </div>
   </main>
-  <?php require_once('sidebar.php'); ?>
+  <?php require_once('sidebar.php'); 
+  require_once('script.php'); ?>
  
-  <!--   Core JS Files   -->
-  <script src="../assets/js/core/popper.min.js"></script>
-  <script src="../assets/js/core/bootstrap.min.js"></script>
-  <script src="../assets/js/plugins/perfect-scrollbar.min.js"></script>
-  <script src="../assets/js/plugins/smooth-scrollbar.min.js"></script>
-  <script>
-    var win = navigator.platform.indexOf('Win') > -1;
-    if (win && document.querySelector('#sidenav-scrollbar')) {
-      var options = {
-        damping: '0.5'
-      }
-      Scrollbar.init(document.querySelector('#sidenav-scrollbar'), options);
-    }
-  </script>
-  <!-- Github buttons -->
-  <script async defer src="https://buttons.github.io/buttons.js"></script>
-  <!-- Control Center for Material Dashboard: parallax effects, scripts for the example pages etc -->
-  <script src="../assets/js/material-dashboard.min.js?v=3.1.0"></script>
+  
 </body>
 
 </html>

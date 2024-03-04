@@ -42,6 +42,14 @@
           </a>
         </li>
         <li class="nav-item">
+          <a class="nav-link text-white " href="transport.php">
+            <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+            <i class="fa fa-taxi"></i>
+            </div>
+            <span class="nav-link-text ms-1">Transport</span>
+          </a>
+        </li>
+        <li class="nav-item">
           <a class="nav-link text-white " href="reservation.php">
             <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
               <i class="fa fa-file"></i>

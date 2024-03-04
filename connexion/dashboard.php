@@ -483,8 +483,9 @@
       <?php require_once('footerd.php'); ?>
     </div>
   </main>
-  <?php require_once('sidebar.php'); ?>
-  <?php require_once('scriptdash.php'); ?>
+  <?php require_once('sidebar.php'); 
+   require_once('scriptdash.php'); 
+  require_once('script.php'); ?>
 </body>
 
 </html>

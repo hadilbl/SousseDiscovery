@@ -28,7 +28,7 @@ class reservationfct
         $idfor = addslashes($idfor);
         $type = addslashes($type);
         $datereservation = date('Y-m-d à H:i');
-        $query = mysqli_query($this->db, "INSERT INTO `reservation`(`idfor`, `type`, `datereservation`, `periode`) VALUES ('idfor','$type','$datereservation','$periode')");
+        $query = mysqli_query($this->db, "INSERT INTO `reservation`(`idfor`, `type`, `datereservation`, `periode`) VALUES ('$idfor','$type','$datereservation','$periode')");
         if ($query) {
             return true;
         } else {

@@ -11,20 +11,20 @@
       $danger = '<div class="alert alert-danger" role="alert"><strong>' . "Erreur" . '</strong> ' . "lors de la terminaison de cette opération." . '</div>';
 
       if (isset($_POST['update'])) {
-        $iddestination = $_POST['update'];
-        echo ($destinationfct->update($iddestination, $_POST['nom'], $_POST['localisation'], $_POST['type'], $_POST['prix'])) ? $success : $danger;
+        $idtransport = $_POST['update'];
+        echo ($transportfct->update($idtransport, $_POST['nom_agence'], $_POST['nom_transport'], $_POST['type'], $_POST['description'], $_POST['prix'])) ? $success : $danger;
       }
 
       if (isset($_POST['delete'])) {
-        $iddestination = $_POST['delete'];
-        echo ($destinationfct->delete($iddestination)) ? $success : $danger;
+        $idtransport = $_POST['delete'];
+        echo ($transportfct->delete($idtransport)) ? $success : $danger;
       }
       ?>
       <div class="col-12">
         <div class="card my-4">
           <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
             <div class="bg-gradient-primary shadow-primary border-radius-lg pt-4 pb-3">
-              <h6 class="text-white text-capitalize ps-3">Table Des Visites </h6>
+              <h6 class="text-white text-capitalize ps-3">Table Des Transports </h6>
             </div>
           </div>
           <div class="card-body px-0 pb-2">
@@ -32,17 +32,18 @@
               <table class="table align-items-center justify-content-center mb-0">
                 <thead>
                   <tr>
-                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">image</th>
-                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Destination</th>
-                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Localisation</th>
+                  <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Image</th>
+                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Nom De Agence</th>
+                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Nom De Transport</th>
                     <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Type</th>
+                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Description</th>
                     <th class="text-uppercase text-secondary text-xxs font-weight-bolder text-center opacity-7 ps-2">prix</th>
                     <th></th>
                   </tr>
                 </thead>
                 <tbody>
                   <?php
-                  $all = $destinationfct->read();
+                  $all = $transportfct->read1();
                   foreach ($all as $i => $item) :
                   ?>
                     <tr>
@@ -51,17 +52,19 @@
                           
                       </td>
                       <td>
-                            <h6 class="mb-0 text-sm"><?= $item["nom"]; ?></h6>
+                            <h6 class="mb-0 text-sm"><?= $item["nom_agence"]; ?></h6>
                       </td>
                       <td class="align-middle text-center">
                         <div class="d-flex align-items-center justify-content-center">
-                          <span class="me-2 text-xs font-weight-bold"><?= $item["localisation"]; ?></span>
+                          <span class="me-2 text-xs font-weight-bold"><?= $item["nom_transport"]; ?></span>
 
                         </div>
                       </td>
-
                       <td>
                         <span class="text-xs font-weight-bold"><?= $item["type"]; ?></span>
+                      </td>
+                      <td>
+                        <span class="text-xs font-weight-bold"><?= $item["description"]; ?></span>
                       </td>
 
                       <td>
@@ -96,20 +99,24 @@
           <div class="modal-content">
             <div class="modal-header">
               <h1 class="modal-title fs-5" id="exampleModalLabel">
-                Éditer élément
+                Éditer Transport
               </h1>
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <form action="" method="POST">
               <div class="modal-body">
                 <div class="mb-3">
-                  <label for="nom" class="col-form-label">Nom Du Destination</label>
-                  <input type="text" id="nom" name="nom" value="<?= $item["nom"]; ?>" placeholder="<?= $item["nom"]; ?>" required>
+                  <label for="nom_agence" class="col-form-label">Nom Du Agence</label>
+                  <input type="text" id="nom_agence" name="nom_agence" value="<?= $item["nom_agence"]; ?>" placeholder="<?= $item["nom_agence"]; ?>" required>
+                </div>
+                <div class="mb-3">
+                  <label for="nom_transport" class="col-form-label">Nom Du Transport</label>
+                  <input type="text" id="nom_transport" name="nom_transport" value="<?= $item["nom_transport"]; ?>" placeholder="<?= $item["nom_transport"]; ?>" required>
                 </div>
 
                 <div class="mb-3">
-                  <label for="localisation" class="col-form-label">Localisation</label>
-                  <input type="text" id="localisation" name="localisation" value="<?= $item["localisation"]; ?>" placeholder="<?= $item["localisation"]; ?>" required>
+                  <label for="description" class="col-form-label">Description</label>
+                  <input type="text" id="description" name="description" value="<?= $item["description"]; ?>" placeholder="<?= $item["description"]; ?>" required>
                 </div>
 
                 <div class="mb-3">
@@ -141,14 +148,14 @@
           <div class="modal-content">
             <div class="modal-header">
               <h1 class="modal-title fs-5" id="exampleModalLabel">
-                Supprimer élément
+                Supprimer Transport
               </h1>
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <form action="" method="POST">
               <div class="modal-body">
                 <p class="mb-3">
-                  Voulez-vous supprimer cette destination ?
+                  Voulez-vous supprimer cette transport ?
                 </p>
               </div>
               <div class="modal-footer">
