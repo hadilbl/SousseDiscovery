@@ -31,7 +31,7 @@ require_once('navbar.php'); ?>
         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d103514.96686123488!2d10.618054400000009!3d35.82833455!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x130275759ac9d10d%3A0x698e3915682cef7d!2sSousse!5e0!3m2!1sfr!2stn!4v1710332003179!5m2!1sfr!2stn" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
       </div>
       
-      <div >
+      <div class="ftco-animate py-md-2 mt-md-2 fadeInUp ftco-animated">
       <p class="mb-0"><a href="#" class="btn btn-primary px-5 py-3">Réserver</a></p>
       </div>
       

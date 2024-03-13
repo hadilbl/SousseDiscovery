@@ -15,20 +15,34 @@ require_once('navbar.php'); ?>
 
 <section class="ftco-section ftco-no-pt ftco-no-pb">
     <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-lg-12 ftco-animate py-md-5 mt-md-5 fadeInUp ftco-animated">
+        <div class="row ">
+            <div class="col-lg-12 ftco-animate py-md-2 mt-md-5 fadeInUp ftco-animated">
                 <h2 class="mb-3">It is a long established fact a reader be distracted</h2>
                     <p><img src="images/hote1.jpg" alt="" class="img-fluid"></p>
             </div>
-           
-
-            <div class="col-md-12 ">
+        
+            <div class="col-md-12 ftco-animate py-md-2 mt-md-2 fadeInUp ftco-animated">
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis, eius mollitia suscipit, quisquam doloremque distinctio perferendis et doloribus unde architecto optio laboriosam porro adipisci sapiente officiis nemo accusamus ad praesentium? Esse minima nisi et. Dolore perferendis, enim praesentium omnis,
                     iste doloremque quia officia optio deserunt molestiae voluptates soluta architecto tempora.</p>
             </div>
-            <div class=" col-lg-12 justify-content-center ">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d103514.96686123488!2d10.618054400000009!3d35.82833455!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x130275759ac9d10d%3A0x698e3915682cef7d!2sSousse!5e0!3m2!1sfr!2stn!4v1710332003179!5m2!1sfr!2stn" width="800" height="600" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>            </div>
-            <div class=" ftco-animate py-md-5 mt-md-5 fadeInUp ftco-animated">
+            <div class=" col-lg-6 ftco-animate py-md-5 mt-md-5 ">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d103514.96686123488!2d10.618054400000009!3d35.82833455!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x130275759ac9d10d%3A0x698e3915682cef7d!2sSousse!5e0!3m2!1sfr!2stn!4v1710335278814!5m2!1sfr!2stn" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>                
+                
+            <div class="col-lg-6 sidebar ">
+       
+       <div class="sidebar-box ftco-animate">
+         <div class="categories">
+           <h3>Categories</h3>
+           <li><a href="#">Travel <span>(12)</span></a></li>
+           <li><a href="#">Tour <span>(22)</span></a></li>
+           <li><a href="#">Destination <span>(37)</span></a></li>
+           <li><a href="#">Drinks <span>(42)</span></a></li>
+           <li><a href="#">Foods <span>(14)</span></a></li>
+           <li><a href="#">Travel <span>(140)</span></a></li>
+         </div>
+       </div>
+                </div>
+                <div class=" ftco-animate py-md-2 mt-md-2 fadeInUp ftco-animated">
                 <p class="mb-0"><a href="#" class="btn btn-primary px-5 py-3">Réserver</a></p>
             </div>
 
