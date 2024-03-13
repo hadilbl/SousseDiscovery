@@ -1,5 +1,5 @@
-<?php require_once('head.php'); ?>
-<?php require_once('navbar.php'); ?>
+<?php require_once('head.php'); 
+ require_once('navbar.php'); ?>
 <section class="hero-wrap hero-wrap-2 js-fullheight" style="background-image: url('images/sousse3.jpg');">
   <div class="overlay"></div>
   <div class="container">
@@ -15,8 +15,9 @@
       $success = '<div class="alert alert-success" role="alert">' . "Opération terminée avec" . ' <strong>' . "succès" . '</strong>.</div>';
       $danger = '<div class="alert alert-danger" role="alert"><strong>' . "Erreur" . '</strong> ' . "lors de la terminaison de cette opération." . '</div>';
       if (isset($_POST['send'])) {
-        echo ($contactfct->create($_POST['nom'], $_POST['email'], $_POST['sujet'], $_POST['message'])) ? $success : $danger;
+        echo ($feedbackfct->create($_POST['nom'], $_POST['email'], $_POST['sujet'], $_POST['message'])) ? $success : $danger;
       }
+      
     ?>
 <section class="ftco-section contact-section ftco-no-pt">
   <div class="container">

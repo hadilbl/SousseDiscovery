@@ -134,7 +134,7 @@ require_once('head.php');
 						</a>
 						<div class="text p-4">
 
-							<span class="days">8 Days Tour</span>
+							
 							<h3><a href="#"><?= $item["nom"]; ?></a></h3>
 							<p class="location"><span class="fa fa-map-marker"></span> <?= $item["localisation"]; ?> </p>
 							<ul>

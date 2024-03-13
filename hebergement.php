@@ -1,5 +1,5 @@
-<?php require_once('head.php'); ?>
-<?php require_once('navbar.php'); ?>
+<?php require_once('head.php'); 
+ require_once('navbar.php'); ?>
 <section class="hero-wrap hero-wrap-2 js-fullheight" style="background-image: url('images/sousse3.jpg');">
   <div class="overlay"></div>
   <div class="container">
@@ -64,7 +64,7 @@
                 <span class="fa fa-star"></span>
                 <span class="fa fa-star"></span>
               </p>
-              <span class="days">8 Days Tour</span>
+              
               <h3><a href="#"><?= $item["nom"]; ?></a></h3>
               <p class="location"><span class="fa fa-map-marker"></span><?= $item["localisation"]; ?></p>
               <ul>
@@ -89,11 +89,11 @@
           <div class="overlay"></div>
           <h2>We Are Pacific A Travel Agency</h2>
           <p>We can manage your dream building A small river named Duden flows by their place</p>
-          <p class="mb-0"><a href="#" class="btn btn-primary px-4 py-3">Ask For A Quote</a></p>
+          <p class="mb-0"><a href="contact.php" class="btn btn-primary px-4 py-3">Contactez-Nous</a></p>
         </div>
       </div>
     </div>
   </div>
 </section>
-<?php require_once('footer.php'); ?>
-<?php include('loader.php'); ?>
+<?php require_once('footer.php'); 
+include('loader.php'); ?>

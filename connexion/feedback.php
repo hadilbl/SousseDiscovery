@@ -27,9 +27,10 @@
               <table class="table align-items-center justify-content-center mb-0">
                 <thead>
                   <tr>
+                  <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">avatar</th>
                     <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Nom</th>
                     <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">prenom</th>
-                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">avatar</th>
+                    
                     <th class="text-uppercase text-secondary text-xxs font-weight-bolder text-center opacity-7 ps-2">Témoignage</th>
                     <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Date</th>
                     <th></th>
@@ -41,6 +42,9 @@
                   foreach ($all as $i => $item) :
                   ?>
                     <tr>
+                    <td>
+                      <img src="../images/<?= $item["avatar"]; ?>" class="avatar avatar-sm rounded-circle me-2" alt="spotify">
+                      </td>
                       <td>
                         <div class="d-flex px-2">
                           <div class="my-auto">
@@ -55,9 +59,7 @@
                         </div>
                       </td>
 
-                      <td>
-                        <p class="text-sm font-weight-bold mb-0"><?= $item["avatar"]; ?></p>
-                      </td>
+                     
 
                       <td>
                         <span class="text-xs font-weight-bold"><?= $item["Commentaire"]; ?></span>
