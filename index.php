@@ -30,7 +30,7 @@ require_once('head.php');
 					<p> Bienvenue à Sousse Discovery, votre guide ultime pour explorer tous les trésors cachés de la magnifique ville de Sousse et de ses environs.</p>
 					<p>	Plongez dans une expérience immersive où chaque coin de rue révèle une nouvelle histoire, une nouvelle découverte à faire.
 						Préparez-vous à vivre des moments inoubliables et à créer des souvenirs durables alors que vous embarquez pour une aventure passionnante avec Sousse Discovery.</p>
-					<p><a href="#" class="btn btn-primary py-3 px-4">Search Destination</a></p>
+					<p><a href="destination.php" class="btn btn-primary py-3 px-4">Recherche Destination</a></p>
 				</div>
 			</div>
 			<div class="col-md-6">
@@ -198,13 +198,7 @@ require_once('head.php');
 			<div class="col-md-7 text-center heading-section heading-section-white ftco-animate">
 				<span class="subheading">Témoignages</span>
 				<h2 class="mb-4">Témoignages des touristes</h2>
-				<?php
-				$success = '<div class="alert alert-success" role="alert">' . "Opération terminée avec" . ' <strong>' . "succès" . '</strong>.</div>';
-				$danger = '<div class="alert alert-danger" role="alert"><strong>' . "Erreur" . '</strong> ' . "lors de la terminaison de cette opération." . '</div>';
-				if (isset($_POST['send'])) {
-					echo ($contactfct->create($_POST['nom'], $_POST['prenom'], $img, $_POST['review'])) ? $success : $danger;
-				}
-				?>
+			
 			</div>
 		</div>
 
@@ -219,6 +213,7 @@ require_once('head.php');
 							<div class="testimony-wrap py-4">
 								<div class="text">
 									<p class="mb-4"><?= $item["Commentaire"]; ?></p>
+									<p class="mb-4"><?= $item["date"]; ?></p>
 									<div class="d-flex align-items-center">
 										<div class="user-img" style="background-image: url(images/<?= $item["avatar"]; ?>)"></div>
 										<div class="pl-3">
@@ -234,7 +229,7 @@ require_once('head.php');
 		</div>
 	</div>
 </section>
-<div class="row justify-content-center"><a href="témoignage.php" class="btn btn-primary py-3 px-5 ">Donner votre témoignage</a></div>
+<div class="row justify-content-center mt-3"><a href="témoignage.php" class="btn btn-primary py-3 px-5 ">Donner votre témoignage</a></div>
 
 
 <section class="ftco-intro ftco-section ftco-no-pt mt-5">

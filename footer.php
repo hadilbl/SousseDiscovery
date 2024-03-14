@@ -3,8 +3,9 @@
 				<div class="row mb-5">
 					<div class="col-md pt-5">
 						<div class="ftco-footer-widget pt-md-5 mb-4">
-							<h2 class="ftco-heading-2">About</h2>
-							<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+							<h2 class="ftco-heading-2">A propos</h2>
+							<p>Notre mission est de vous offrir une expérience touristique exceptionnelle, 
+									en mettant l'accent sur la qualité, la sécurité et le confort tout au long de votre séjour.</p>
 							<ul class="ftco-footer-social list-unstyled float-md-left float-lft">
 								<li class="ftco-animate"><a href="#"><span class="fa fa-twitter"></span></a></li>
 								<li class="ftco-animate"><a href="#"><span class="fa fa-facebook"></span></a></li>
@@ -14,14 +15,12 @@
 					</div>
 					<div class="col-md pt-5 border-left">
 						<div class="ftco-footer-widget pt-md-5 mb-4 ml-md-5">
-							<h2 class="ftco-heading-2">Infromation</h2>
+							<h2 class="ftco-heading-2">Informations</h2>
 							<ul class="list-unstyled">
-								<li><a href="#" class="py-2 d-block">Online Enquiry</a></li>
-								<li><a href="#" class="py-2 d-block">General Enquiries</a></li>
-								<li><a href="#" class="py-2 d-block">Booking Conditions</a></li>
-								<li><a href="#" class="py-2 d-block">Privacy and Policy</a></li>
-								<li><a href="#" class="py-2 d-block">Refund Policy</a></li>
-								<li><a href="#" class="py-2 d-block">Call Us</a></li>
+								<li><a href="#" class="py-2 d-block">Demande en ligne</a></li>
+								<li><a href="#" class="py-2 d-block">Conditions de réservation</a></li>
+								<li><a href="#" class="py-2 d-block">Politique de remboursement</a></li>
+								<li><a href="conatact.php" class="py-2 d-block">Contactez-Nous</a></li>
 							</ul>
 						</div>
 					</div>
@@ -30,22 +29,21 @@
 							<h2 class="ftco-heading-2">Experience</h2>
 							<ul class="list-unstyled">
 								<li><a href="#" class="py-2 d-block">Adventure</a></li>
-								<li><a href="#" class="py-2 d-block">Hotel and Restaurant</a></li>
-								<li><a href="#" class="py-2 d-block">Beach</a></li>
-								<li><a href="#" class="py-2 d-block">Nature</a></li>
-								<li><a href="#" class="py-2 d-block">Camping</a></li>
-								<li><a href="#" class="py-2 d-block">Party</a></li>
+								<li><a href="destination.php" class="py-2 d-block">Visite</a></li>
+								<li><a href="hebergement.php" class="py-2 d-block">Hébergement</a></li>
+								<li><a href="transportphp" class="py-2 d-block">Transport</a></li>
+								<li><a href="#" class="py-2 d-block">Evénement</a></li>
 							</ul>
 						</div>
 					</div>
 					<div class="col-md pt-5 border-left">
 						<div class="ftco-footer-widget pt-md-5 mb-4">
-							<h2 class="ftco-heading-2">Have a Questions?</h2>
+							<h2 class="ftco-heading-2">Avez-vous des questions?</h2>
 							<div class="block-23 mb-3">
 								<ul>
 									<li><span class="icon fa fa-map-marker"></span><span class="text">Sousse,Tunisie</span></li>
-									<li><a href="#"><span class="icon fa fa-phone"></span><span class="text">+216 55989000</span></a></li>
-									<li><a href="#"><span class="icon fa fa-paper-plane"></span><span class="text">soussediscovery@gmail.com</span></a></li>
+									<li><a href="#"><span class="icon fa fa-phone"></span><span class="text">+216 25 100 200</span></a></li>
+									<li><a href="#"><span class="icon fa fa-paper-plane"></span><span class="text">Soussediscovery@gmail.com</span></a></li>
 								</ul>
 							</div>
 						</div>

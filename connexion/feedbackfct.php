@@ -10,7 +10,7 @@ class feedbackfct
     {
         $this->db = $db;
     }
-    public function create($nom, $prenom, $image, $review)
+    public function create($nom, $prenom, $image, $review,$date)
     {
         $nom = addslashes($nom);
         $prenom = addslashes($prenom);
