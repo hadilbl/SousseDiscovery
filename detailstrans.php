@@ -6,8 +6,8 @@ require_once('navbar.php'); ?>
   <div class="container">
     <div class="row no-gutters slider-text js-fullheight align-items-end justify-content-center">
       <div class="col-md-9 ftco-animate pb-5 text-center">
-        <p class="breadcrumbs"><span class="mr-2"><a href="index.php">Acceuil <i class="fa fa-chevron-right"></i></a></span> <span class="mr-2"><a href="destination.php">Visite <i class="fa fa-chevron-right"></i></a></span> <span>Visite Details<i class="fa fa-chevron-right"></i></span></p>
-        <h1 class="mb-0 bread">Visite Details</h1>
+        <p class="breadcrumbs"><span class="mr-2"><a href="index.php">Acceuil <i class="fa fa-chevron-right"></i></a></span> <span class="mr-2"><a href="Transport.php">Transport <i class="fa fa-chevron-right"></i></a></span> <span>Transport Details<i class="fa fa-chevron-right"></i></span></p>
+        <h1 class="mb-0 bread">Transport Details</h1>
       </div>
     </div>
   </div>
@@ -18,15 +18,17 @@ require_once('navbar.php'); ?>
     <div class="row ">
       <div class="col-lg-12 ftco-animate py-md-5 mt-md-5 fadeInUp ftco-animated">
         <h2 class="mb-3">It is a long established fact a reader be distracted</h2>
+      </div>
+        <div class="col-md-6 justify-content-center">
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis, eius mollitia suscipit, quisquam doloremque distinctio perferendis et doloribus unde architecto optio laboriosam porro adipisci sapiente officiis nemo accusamus ad praesentium? Esse minima nisi et. Dolore perferendis, enim praesentium omnis,
           iste doloremque quia officia optio deserunt molestiae voluptates soluta architecto tempora.</p>
 
       </div>
-      <div class="col-md-12 d-flex justify-content-center">
+      <div class="col-md-6">
   <p>
     <img src="images/magic.jpeg" alt="" class="img-fluid">
   </p>
-</div>
+  </div>
 
       
       
