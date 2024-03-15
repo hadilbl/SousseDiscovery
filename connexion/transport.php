@@ -10,6 +10,23 @@
       $success = '<div class="alert alert-success" role="alert">' . "Opération terminée avec" . ' <strong>' . "succès" . '</strong>.</div>';
       $danger = '<div class="alert alert-danger" role="alert"><strong>' . "Erreur" . '</strong> ' . "lors de la terminaison de cette opération." . '</div>';
 
+      if (isset($_POST['createtrans'])) {
+        if (isset($_FILES["image"]) && $_FILES["image"]["error"] == 0) {
+          $targetPath = "assets/img/"; // Specify the directory where you want to save the uploaded file
+          $imageName = $_FILES["image"]["name"];
+          $fileExtension = pathinfo($imageName, PATHINFO_EXTENSION);
+          $image = $imageName;
+
+          if (move_uploaded_file($_FILES["image"]["tmp_name"], $targetPath . $image)) {
+
+            echo ($transportfct->create($_POST['nom_agence'], $_POST['nom_transport'], $_POST['type'], $_POST['description'], $_POST['prix'], $image)) ? $success : $danger;
+          } else {
+            echo "Sorry, there was an error uploading your file.";
+          }
+        } else {
+          echo "Error: No file uploaded or an error occurred during upload.";
+        }
+      }
       if (isset($_POST['update'])) {
         $idtransport = $_POST['update'];
         echo ($transportfct->update($idtransport, $_POST['nom_agence'], $_POST['nom_transport'], $_POST['type'], $_POST['description'], $_POST['prix'])) ? $success : $danger;
@@ -20,6 +37,54 @@
         echo ($transportfct->delete($idtransport)) ? $success : $danger;
       }
       ?>
+      <div class="modal fade" id="ajouter" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">Ajoute Transport</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form action="" method="POST">
+              <div class="modal-body">
+                <div class="mb-3">
+                  <label for="Nom_agence" class="col-form-label">Nom agence</label>
+                  <input type="text" class="form-control" name="Nom_agence" required>
+                </div>
+                <div class="mb-3">
+                  <label for="nom_transport" class="col-form-label">nom transport</label>
+                  <input type="text" class="form-control" name="nom_transport" required>
+                </div>
+
+
+
+                <div class="mb-3">
+                  <label for="type" class="col-form-label">Type</label>
+                  <input type="text" class="form-control" name="type" required>
+                </div>
+                <div class="mb-3">
+                  <label for="description" class="col-form-label">Description</label>
+                  <input type="text" class="form-control" name="description" required>
+                </div>
+                <div class="mb-3">
+                  <label for="prix" class="col-form-label">prix</label>
+                  <input type="text" class="form-control" name="prix" required>
+                </div>
+                <div class="mb-3">
+                  <input type="file" name="image" class="form-control-file" required>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="submit" name="createtrans" class="btn btn-outline-success">
+                  Confirmer
+                </button>
+                <button type="rest" class="btn btn-outline-danger" data-bs-dismiss="modal">
+                  Annuler
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
       <div class="col-12">
         <div class="card my-4">
           <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
@@ -32,7 +97,7 @@
               <table class="table align-items-center justify-content-center mb-0">
                 <thead>
                   <tr>
-                  <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Image</th>
+                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Image</th>
                     <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Nom De Agence</th>
                     <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Nom De Transport</th>
                     <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Type</th>
@@ -48,11 +113,11 @@
                   ?>
                     <tr>
                       <td>
-                            <img src="../images/<?= $item["image"]; ?>" class="avatar avatar-sm rounded-circle me-2" alt="spotify">
-                          
+                        <img src="../images/<?= $item["image"]; ?>" class="avatar avatar-sm rounded-circle me-2" alt="spotify">
+
                       </td>
                       <td>
-                            <h6 class="mb-0 text-sm"><?= $item["nom_agence"]; ?></h6>
+                        <h6 class="mb-0 text-sm"><?= $item["nom_agence"]; ?></h6>
                       </td>
                       <td class="align-middle text-center">
                         <div class="d-flex align-items-center justify-content-center">
@@ -88,6 +153,9 @@
               </table>
             </div>
           </div>
+          <form method="post" class="d-grid gap-2">
+            <button type="button" class="btn btn-primary py-3 px-5" data-bs-toggle="modal" data-bs-target="#ajouter">ajouter</button>
+          </form>
         </div>
       </div>
     </div>
@@ -175,7 +243,7 @@
     <?php require_once('footerd.php'); ?>
   </div>
   </main>
-  <?php require_once('sidebar.php'); 
+  <?php require_once('sidebar.php');
   require_once('script.php'); ?>
 </body>
 

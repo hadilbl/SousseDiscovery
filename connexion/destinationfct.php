@@ -7,6 +7,16 @@ class destinationfct
     {
         $this->db = $db;
     }
+    public function create($nom, $localisation, $prix, $image, $type, $description)
+    {
+        $name = addslashes($nom);
+        $query = mysqli_query($this->db, "INSERT INTO `destination`(`nom`, `localisation`, `prix`, `image`, `type`, `description`) VALUES ('$nom','$localisation','$prix','$image','$type','$description')");
+        if ($query) {
+            return true;
+        } else {
+            return false;
+        }
+    }
     public function read()
     {
         $table = array();

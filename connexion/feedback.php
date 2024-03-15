@@ -12,7 +12,7 @@
 
       if (isset($_POST['delete'])) {
         $idfeedback = $_POST['delete'];
-        echo ($feedbackfct->delete($idcontact)) ? $success : $danger;
+        echo ($feedbackfct->delete($idfeedback)) ? $success : $danger;
       }
       ?>
       <div class="col-12">

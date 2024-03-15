@@ -10,6 +10,23 @@
       $success = '<div class="alert alert-success" role="alert">' . "Opération terminée avec" . ' <strong>' . "succès" . '</strong>.</div>';
       $danger = '<div class="alert alert-danger" role="alert"><strong>' . "Erreur" . '</strong> ' . "lors de la terminaison de cette opération." . '</div>';
 
+      if (isset($_POST['createvis'])) {
+        if (isset($_FILES["image"]) && $_FILES["image"]["error"] == 0) {
+          $targetPath = "assets/img/"; // Specify the directory where you want to save the uploaded file
+          $imageName = $_FILES["image"]["name"];
+          $fileExtension = pathinfo($imageName, PATHINFO_EXTENSION);
+          $image = $imageName;
+      
+          if (move_uploaded_file($_FILES["image"]["tmp_name"], $targetPath . $image)) {
+          
+            echo ($destinationfct->create($_POST['nom'],$_POST['localisation'], $_POST['prix'],$_POST['type'],$_POST['description'],$image)) ? $success : $danger;
+          } else {
+            echo "Sorry, there was an error uploading your file.";
+          }
+        } else {
+          echo "Error: No file uploaded or an error occurred during upload.";
+        }
+      }
       if (isset($_POST['update'])) {
         $iddestination = $_POST['update'];
         echo ($destinationfct->update($iddestination, $_POST['nom'], $_POST['localisation'], $_POST['type'], $_POST['prix'])) ? $success : $danger;
@@ -20,6 +37,52 @@
         echo ($destinationfct->delete($iddestination)) ? $success : $danger;
       }
       ?>
+      <div class="modal fade" id="ajouter" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Ajoute d'un destination</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <form action="" method="POST">
+                    <div class="modal-body">
+                        <div class="mb-3">
+                            <label for="nom" class="col-form-label">nom  d'un destination</label>
+                            <input type="text" class="form-control" name="nom" required>
+                        </div>
+                      
+                        <div class="mb-3">
+                            <label for="localisation" class="col-form-label">Localisation</label>
+                            <input type="text" class="form-control" name="localisation" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="prix" class="col-form-label">prix</label>
+                            <input type="text" class="form-control" name="prix" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="type" class="col-form-label">Type</label>
+                            <input type="text" class="form-control" name="type" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="description" class="col-form-label">Description</label>
+                            <input type="text" class="form-control" name="description" required>
+                        </div>
+                        <div class="mb-3">
+                        <input type="file" name="image" class="form-control-file" required>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" name="createdest" class="btn btn-outline-success">
+                            Confirmer
+                        </button>
+                        <button type="rest" class="btn btn-outline-danger" data-bs-dismiss="modal">
+                            Annuler
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
       <div class="col-12">
         <div class="card my-4">
           <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
@@ -85,6 +148,9 @@
               </table>
             </div>
           </div>
+          <form method="post" class="d-grid gap-2">
+                    <button type="button"  class="btn btn-primary py-3 px-5" data-bs-toggle="modal" data-bs-target="#ajouter">ajouter</button>
+            </form>
         </div>
       </div>
     </div>

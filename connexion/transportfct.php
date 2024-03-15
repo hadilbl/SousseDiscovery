@@ -7,6 +7,16 @@ class transportfct
     {
         $this->db = $db;
     }
+    public function create($nom_agence, $nom_transport, $type, $description, $prix, $image)
+    {
+        $name = addslashes($nom_agence);
+        $query = mysqli_query ($this->db, "INSERT INTO `destination`(`nom_agence`, `nom_transport`, `prix`, `image`, `type`, `description`) VALUES ('$nom_agence','$nom_transport','$type','$description','$prix','$image')");
+        if ($query) {
+            return true;
+        } else {
+            return false;
+        }
+    }
     public function read1()
     {
         $table = array();
