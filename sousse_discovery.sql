@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : jeu. 14 mars 2024 à 14:27
+-- Généré le : ven. 15 mars 2024 à 20:50
 -- Version du serveur : 8.0.31
 -- Version de PHP : 8.0.26
 
@@ -94,7 +94,7 @@ CREATE TABLE IF NOT EXISTS `feedback` (
   `Commentaire` text COLLATE utf8mb4_general_ci NOT NULL,
   `date` varchar(50) COLLATE utf8mb4_general_ci NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=16 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Déchargement des données de la table `feedback`
@@ -181,18 +181,26 @@ CREATE TABLE IF NOT EXISTS `transport` (
   `nom_transport` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `type` varchar(150) COLLATE utf8mb4_general_ci NOT NULL,
   `description` text COLLATE utf8mb4_general_ci NOT NULL,
-  `prix` int NOT NULL,
+  `prix` varchar(100) COLLATE utf8mb4_general_ci NOT NULL,
   `image` varchar(200) COLLATE utf8mb4_general_ci NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Déchargement des données de la table `transport`
 --
 
 INSERT INTO `transport` (`id`, `nom_agence`, `nom_transport`, `type`, `description`, `prix`, `image`) VALUES
-(1, 'agence BSA', 'Bus', 'Transport Publique', 'test', 250, 'car.jpg'),
-(2, 'Agence BSA', 'picanto KIA', 'Transport Privé', 'test', 120, 'car.jpg');
+(1, 'agence BSA', 'Bus', 'Transport Publique', 'test', '250', 'car.jpg'),
+(2, 'Agence BSA', 'picanto KIA', 'Transport Privé', 'test', '80', 'car.jpg'),
+(3, 'XCar', 'hyundai i10', 'Transport Privé', '5 places', '80', ''),
+(4, 'ALLURE RENT CAR', 'hyundai i20', 'Transport Privé', '5 places', '80', ''),
+(5, 'CityGo Car Rental', 'Renault Grand Scenic', 'Transport Privé', '7 Places', '120', ''),
+(6, 'Nasr Rent A Car', 'Mini Bus', 'Transport Privé', '', '500', ''),
+(7, 'Societé de Transport du Sahel STS', 'BUS', 'Transport Publique', '', '0', ''),
+(8, 'Societé de Transport du Sahel STS', 'Mini Bus', 'Transport Publique', '', '0', ''),
+(9, 'Gare De Metro Sousse', 'Metro', 'Transport Publique', '', '0', ''),
+(10, 'Gare de Sousse', 'Train', 'Transport Publique', '', '0', '');
 
 -- --------------------------------------------------------
 
