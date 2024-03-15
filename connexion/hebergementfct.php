@@ -54,6 +54,15 @@ class hebergementfct
         return false;
     }
 }
+public function getCounthebergement()
+    {
+        // Start requet sql to get rows in table inscription
+        $query = mysqli_query($this->db, "SELECT * FROM `hebergement` ");
+        // Start requet sql to count rows of $query
+        $nombre = mysqli_num_rows($query);
+        // Return nomber of rows
+        return $nombre;
+    }
 }
 
 

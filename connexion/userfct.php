@@ -45,7 +45,18 @@ class userfct
             return false;
         }
     }
-}
+
+    public function getCountuser()
+    {
+        // Start requet sql to get rows in table inscription
+        $query = mysqli_query($this->db, "SELECT * FROM `user` WHERE `type`=0 ");
+        // Start requet sql to count rows of $query
+        $nombre = mysqli_num_rows($query);
+        // Return nomber of rows
+        return $nombre;
+    }
+    }
+
 
 
 

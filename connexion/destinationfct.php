@@ -43,4 +43,13 @@ class destinationfct
             return false;
         }
     }
+    public function getCountdestination()
+    {
+        // Start requet sql to get rows in table inscription
+        $query = mysqli_query($this->db, "SELECT * FROM `destination` ");
+        // Start requet sql to count rows of $query
+        $nombre = mysqli_num_rows($query);
+        // Return nomber of rows
+        return $nombre;
+    }
 }
