@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : ven. 15 mars 2024 à 20:50
+-- Généré le : sam. 16 mars 2024 à 14:43
 -- Version du serveur : 8.0.31
 -- Version de PHP : 8.0.26
 
@@ -184,23 +184,24 @@ CREATE TABLE IF NOT EXISTS `transport` (
   `prix` varchar(100) COLLATE utf8mb4_general_ci NOT NULL,
   `image` varchar(200) COLLATE utf8mb4_general_ci NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Déchargement des données de la table `transport`
 --
 
 INSERT INTO `transport` (`id`, `nom_agence`, `nom_transport`, `type`, `description`, `prix`, `image`) VALUES
-(1, 'agence BSA', 'Bus', 'Transport Publique', 'test', '250', 'car.jpg'),
-(2, 'Agence BSA', 'picanto KIA', 'Transport Privé', 'test', '80', 'car.jpg'),
-(3, 'XCar', 'hyundai i10', 'Transport Privé', '5 places', '80', ''),
-(4, 'ALLURE RENT CAR', 'hyundai i20', 'Transport Privé', '5 places', '80', ''),
-(5, 'CityGo Car Rental', 'Renault Grand Scenic', 'Transport Privé', '7 Places', '120', ''),
-(6, 'Nasr Rent A Car', 'Mini Bus', 'Transport Privé', '', '500', ''),
-(7, 'Societé de Transport du Sahel STS', 'BUS', 'Transport Publique', '', '0', ''),
-(8, 'Societé de Transport du Sahel STS', 'Mini Bus', 'Transport Publique', '', '0', ''),
-(9, 'Gare De Metro Sousse', 'Metro', 'Transport Publique', '', '0', ''),
-(10, 'Gare de Sousse', 'Train', 'Transport Publique', '', '0', '');
+(1, 'Agence BSA', 'Toyota Highlander ', 'Transport Privé', '7 places.6 Cylindres , 1.8L , 	Boite Auto , meilleure voiture familiale pour un voyage hors route.\n', '180', 'car.jpg'),
+(2, 'Agence BSA', 'picanto KIA', 'Transport Privé', '5 places.4 Cylindres ,1.2L, Boite Automatique ,VOLUME DE COFFRE 255L.', '80', 'car.jpg'),
+(3, 'XCar', 'hyundai i10', 'Transport Privé', '5 places.4 Cylindres ,1.2L, Boite Manuelle , petite voiture mais avec un gros VOLUME DE COFFRE 260L.', '80', ''),
+(4, 'ALLURE RENT CAR', 'hyundai i20', 'Transport Privé', '5 places.4 Cylindres ,1.2L, Boite Manuelle , petite voiture mais avec un VOLUME DE COFFRE important 352L.', '80', ''),
+(5, 'CityGo Car Rental', 'Renault Grand Scenic', 'Transport Privé', '7 Places.4 Cylindres ,1.6L, Boite Manuelle , grande voiture spacieuse avec un VOLUME DE COFFRE 233L.', '120', ''),
+(6, 'Nasr Rent A Car', 'Mini Bus', 'Transport Privé', '(20 places) avec chauffeur.Vous devez organiser le déplacement d\'un grand groupe.', '500', 'minibus.jpg'),
+(7, 'Societé de Transport du Sahel STS', 'Bus, Mini Bus', 'Transport Publique', 'La Société de transport du Sahel STS est une entreprise publique dont                   L\'activité est d\'assurer le transport de voyageurs par autobus dans la région du Sahel tunisien, notamment les gouvernorats de Sousse, Monastir et Mahdia. Elle assure la liaison entre ces régions et d\'autres gouvernorats du pays par le biais de lignes quotidiennes régulières. Station de bus a Beb Bhar: ou on a les direction suivante : Sousse - Msaken (22) :1dt Sousse - Sahloul (13C) : 1.2dt Sousse - Kantaoui Sousse - Messadine (24) Sousse - Sidi Bouali Sousse - Nfidha ...', 'selon le ville', 'bus.jpg'),
+(9, 'Gare De Metro Sousse', 'Metro', 'Transport Publique', 'Sousse ,Monastir et Mahdia avec plusieur stations entre ces deux region.', 'selon le ville', 'Metro.jpg'),
+(10, 'Gare de Sousse', 'Train', 'Transport Publique', '', 'selon le ville', 'train.jpg'),
+(11, 'Personne titulaire d\'une licence de taxi collectif', 'Louage jaune', 'Transport Publique', 'Le louage jaune se déplace dans la région de Sousse : Sousse - Msaken:1dt250, Sousse Kantaoui:1dt250, \r\nSousse - Sidi Bouali (Mall Of Sousse):1dt450,\r\n Sousse - Sahloul:1dt,\r\n Sousse-kalaa kbira:1dt ...', 'selon le ville ', 'louage1.jpg'),
+(12, 'Personne titulaire d\'une licence de taxi ', 'Taxi compteur', 'Transport Publique', 'Autre forme de louage mais avec on peut dire un secteur privé car c\'est le voyageur décide son destination privé. Il permet de mesurer le montant à percevoir en fonction de la durée de la course et de la distance 	parcourue lors de celle-ci.', 'compteur', 'taxi.jpg');
 
 -- --------------------------------------------------------
 

@@ -24,17 +24,16 @@
                         </a>
                         <div class="text">
                             <div class="d-flex align-items-center mb-9 topp">
-                                <div class="three">
-                                    <span class="day"><?= $item["prix"]; ?></span>
-                                </div>
-                                <div class="two">
-                                    <span class="yr"> /dt</span>
+
+                                <div class="five">
                                     <span class="mos"><?= $item["type"]; ?></span>
+                                    <span class="yr"> <?= $item["prix"]; ?></span>
+
                                 </div>
                             </div>
                             <h3 class="heading"><a href="#"><?= $item["nom_transport"]; ?></a></h3>
                             <p><?= $item["nom_agence"]; ?></p>
-                            <p><a href="#" class="btn btn-primary">Réserver</a></p>
+                            <p><a href="#" class="btn btn-primary">Lire Plus</a></p>
                         </div>
                     </div>
 
