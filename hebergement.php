@@ -71,7 +71,7 @@
                 <li><span class="flaticon-shower"></span>2</li>
                 <li><span class="flaticon-king-size"></span>3</li>
                 <li><span class="flaticon-sun-umbrella"></span><?= $item["type"]; ?></li>
-                <li class="mb-0"><a href="#" class="btn btn-primary  px-2 py-1">Réserver</a></li>
+                <li class="mb-0"><a href="booking.php?type=Hebergement&id=<?= $item['id'] ; ?>" class="btn btn-primary  px-2 py-1">Réserver</a></li>
               </ul>
                           </div>
           </div>

@@ -10,7 +10,7 @@ class transportfct
     public function create($nom_agence, $nom_transport, $type, $description, $prix, $image)
     {
         $name = addslashes($nom_agence);
-        $query = mysqli_query ($this->db, "INSERT INTO `destination`(`nom_agence`, `nom_transport`, `prix`, `image`, `type`, `description`) VALUES ('$nom_agence','$nom_transport','$type','$description','$prix','$image')");
+        $query = mysqli_query($this->db, "INSERT INTO `destination`(`nom_agence`, `nom_transport`, `prix`, `image`, `type`, `description`) VALUES ('$nom_agence','$nom_transport','$type','$description','$prix','$image')");
         if ($query) {
             return true;
         } else {
@@ -44,22 +44,18 @@ class transportfct
         }
         return $table;
     }
-    public function update($idtransport,$nom_agence,$nom_transport,$type,$description,$prix )
+    public function update($idtransport, $nom_agence, $nom_transport, $type, $description, $prix)
     {
         $query = mysqli_query($this->db, "UPDATE `transport` SET `nom_agence`='$nom_agence', `nom_transport`='$nom_transport' ,`type`='$type',`description`='$description',`prix`='$prix'  WHERE `id`='$idtransport'");
-      
         if ($query) {
             return true;
         } else {
             return false;
         }
     }
-    
-        public function delete($idtransport)
+    public function delete($idtransport)
     {
-        
         $query = mysqli_query($this->db, "DELETE FROM `transport` WHERE `id`='$idtransport'");
-        
         if ($query) {
             return true;
         } else {
@@ -74,5 +70,19 @@ class transportfct
         $nombre = mysqli_num_rows($query);
         // Return nomber of rows
         return $nombre;
+    }
+    // Get by id
+    public function getById($id)
+    {
+        $stmt = mysqli_prepare($this->db, "SELECT * FROM `transport` WHERE `id` = ?");
+        if ($stmt === false) {
+            return false;
+        }
+        mysqli_stmt_bind_param($stmt, "i", $id);
+        mysqli_stmt_execute($stmt);
+        $result = mysqli_stmt_get_result($stmt);
+        $row = mysqli_fetch_assoc($result);
+        mysqli_stmt_close($stmt);
+        return $row;
     }
 }

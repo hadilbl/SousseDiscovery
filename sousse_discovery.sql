@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Hôte : 127.0.0.1:3306
--- Généré le : sam. 16 mars 2024 à 22:16
--- Version du serveur : 8.0.31
--- Version de PHP : 8.0.26
+-- Host: 127.0.0.1:3306
+-- Generation Time: Mar 18, 2024 at 05:28 PM
+-- Server version: 8.2.0
+-- PHP Version: 8.2.13
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,29 +18,29 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de données : `sousse_discovery`
+-- Database: `sousse_discovery`
 --
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `contact`
+-- Table structure for table `contact`
 --
 
 DROP TABLE IF EXISTS `contact`;
 CREATE TABLE IF NOT EXISTS `contact` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `nom` varchar(50) COLLATE utf8mb4_general_ci NOT NULL,
-  `email` varchar(100) COLLATE utf8mb4_general_ci NOT NULL,
-  `sujet` text COLLATE utf8mb4_general_ci NOT NULL,
-  `message` text COLLATE utf8mb4_general_ci NOT NULL,
-  `dateenvoi` varchar(50) COLLATE utf8mb4_general_ci NOT NULL,
+  `nom` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `email` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `sujet` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `message` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `dateenvoi` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `etat` int NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Déchargement des données de la table `contact`
+-- Dumping data for table `contact`
 --
 
 INSERT INTO `contact` (`id`, `nom`, `email`, `sujet`, `message`, `dateenvoi`, `etat`) VALUES
@@ -49,27 +49,26 @@ INSERT INTO `contact` (`id`, `nom`, `email`, `sujet`, `message`, `dateenvoi`, `e
 -- --------------------------------------------------------
 
 --
--- Structure de la table `destination`
+-- Table structure for table `destination`
 --
 
 DROP TABLE IF EXISTS `destination`;
 CREATE TABLE IF NOT EXISTS `destination` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `nom` varchar(50) COLLATE utf8mb4_general_ci NOT NULL,
-  `localisation` varchar(200) COLLATE utf8mb4_general_ci NOT NULL,
-  `type` varchar(30) COLLATE utf8mb4_general_ci NOT NULL,
-  `prix` varchar(100) COLLATE utf8mb4_general_ci NOT NULL,
-  `description` text COLLATE utf8mb4_general_ci NOT NULL,
-  `image` varchar(250) COLLATE utf8mb4_general_ci NOT NULL,
+  `nom` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `localisation` varchar(200) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `type` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `prix` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `description` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `image` varchar(250) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Déchargement des données de la table `destination`
+-- Dumping data for table `destination`
 --
 
 INSERT INTO `destination` (`id`, `nom`, `localisation`, `type`, `prix`, `description`, `image`) VALUES
-(2, 'Village de Hergla', 'Hergla', 'pres plage', 'gratuit', 'Village idéalement placé, Hergla allie authenticité, calme et micro climat.', 'hergla2.jpg'),
 (3, 'Ecovillage', 'Sidi Bou Ali', 'pres montagne', '225', 'Ecovillage pour un moment magique en famille à notre espace Ecovillage : un paradis pour les enfants, un brunch délicieux et des plats tunisiens ...', 'ecovillage1.jpg'),
 (4, 'Porte Kantaoui', 'Kantaoui', 'pres plage', 'gratuit', 'Port El-Kantaoui est une marina située au nord-ouest de la ville de Sousse, qui est devenue l\'une des plus importantes stations balnéaires de la Tunisie. ', 'kantaoui.webp'),
 (5, 'Médina de Sousse', 'Sousse', 'pres montagne', '225', 'La médina de Sousse, son fort – le Ribat –, sa Grande Mosquée, sa Kasbah, ses remparts forment un ensemble exceptionnel de monuments à la beauté austère, puissamment évocateur du passé de cette place forte médiévale.   Elle est inscrite sur la Liste du Patrimoine Mondial de l\'Humanité de l\'Unesco.', 'mdina.jpg'),
@@ -82,22 +81,22 @@ INSERT INTO `destination` (`id`, `nom`, `localisation`, `type`, `prix`, `descrip
 -- --------------------------------------------------------
 
 --
--- Structure de la table `feedback`
+-- Table structure for table `feedback`
 --
 
 DROP TABLE IF EXISTS `feedback`;
 CREATE TABLE IF NOT EXISTS `feedback` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `nom` varchar(20) COLLATE utf8mb4_general_ci NOT NULL,
-  `prenom` varchar(20) COLLATE utf8mb4_general_ci NOT NULL,
+  `nom` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `prenom` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `avatar` varchar(150) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
-  `Commentaire` text COLLATE utf8mb4_general_ci NOT NULL,
-  `date` varchar(50) COLLATE utf8mb4_general_ci NOT NULL,
+  `Commentaire` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `date` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=16 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Déchargement des données de la table `feedback`
+-- Dumping data for table `feedback`
 --
 
 INSERT INTO `feedback` (`id`, `nom`, `prenom`, `avatar`, `Commentaire`, `date`) VALUES
@@ -110,23 +109,23 @@ INSERT INTO `feedback` (`id`, `nom`, `prenom`, `avatar`, `Commentaire`, `date`) 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `hebergement`
+-- Table structure for table `hebergement`
 --
 
 DROP TABLE IF EXISTS `hebergement`;
 CREATE TABLE IF NOT EXISTS `hebergement` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `nom` varchar(50) COLLATE utf8mb4_general_ci NOT NULL,
-  `localisation` varchar(200) COLLATE utf8mb4_general_ci NOT NULL,
+  `nom` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `localisation` varchar(200) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `prix` int NOT NULL,
-  `image` varchar(150) COLLATE utf8mb4_general_ci NOT NULL,
+  `image` varchar(150) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `type` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
-  `description` text COLLATE utf8mb4_general_ci NOT NULL,
+  `description` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Déchargement des données de la table `hebergement`
+-- Dumping data for table `hebergement`
 --
 
 INSERT INTO `hebergement` (`id`, `nom`, `localisation`, `prix`, `image`, `type`, `description`) VALUES
@@ -140,7 +139,7 @@ INSERT INTO `hebergement` (`id`, `nom`, `localisation`, `prix`, `image`, `type`,
 -- --------------------------------------------------------
 
 --
--- Structure de la table `notification`
+-- Table structure for table `notification`
 --
 
 DROP TABLE IF EXISTS `notification`;
@@ -155,23 +154,40 @@ CREATE TABLE IF NOT EXISTS `notification` (
 -- --------------------------------------------------------
 
 --
--- Structure de la table `reservation`
+-- Table structure for table `reservation`
 --
 
 DROP TABLE IF EXISTS `reservation`;
 CREATE TABLE IF NOT EXISTS `reservation` (
   `id` int NOT NULL AUTO_INCREMENT,
   `idfor` int NOT NULL,
-  `type` varchar(100) COLLATE utf8mb4_general_ci NOT NULL,
-  `datereservation` date NOT NULL,
-  `periode` varchar(200) COLLATE utf8mb4_general_ci NOT NULL,
+  `type` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `idClient` int NOT NULL,
+  `dateD` varchar(50) COLLATE utf8mb4_general_ci NOT NULL,
+  `dateF` varchar(50) COLLATE utf8mb4_general_ci NOT NULL,
+  `dateReservation` varchar(50) COLLATE utf8mb4_general_ci NOT NULL,
+  `etat` int NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `reservation`
+--
+
+INSERT INTO `reservation` (`id`, `idfor`, `type`, `idClient`, `dateD`, `dateF`, `dateReservation`, `etat`) VALUES
+(1, 0, '', 0, '', '', '2024-03-18', 0),
+(2, 2, 'Hebergement', 2, '3/11/2024', '3/27/2024', '2024', 1),
+(3, 2, 'Transport', 2, '3/17/2024', '3/26/2024', '2024', 1),
+(4, 2, 'Hebergement', 2, '3/3/2024', '3/26/2024', '2024', 1),
+(5, 2, 'Transport', 2, '3/26/2024', '3/31/2024', '2024', 1),
+(6, 2, 'Transport', 2, '3/26/2024', '3/31/2024', '2024', 1),
+(7, 2, 'Hebergement', 2, '3/20/2024', '3/31/2024', '2024', 1),
+(8, 4, 'Destination', 2, 'NULL', 'NULL', '2024', 1);
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `transport`
+-- Table structure for table `transport`
 --
 
 DROP TABLE IF EXISTS `transport`;
@@ -179,15 +195,15 @@ CREATE TABLE IF NOT EXISTS `transport` (
   `id` int NOT NULL AUTO_INCREMENT,
   `nom_agence` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `nom_transport` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
-  `type` varchar(150) COLLATE utf8mb4_general_ci NOT NULL,
-  `description` text COLLATE utf8mb4_general_ci NOT NULL,
-  `prix` varchar(100) COLLATE utf8mb4_general_ci NOT NULL,
-  `image` varchar(200) COLLATE utf8mb4_general_ci NOT NULL,
+  `type` varchar(150) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `description` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `prix` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `image` varchar(200) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Déchargement des données de la table `transport`
+-- Dumping data for table `transport`
 --
 
 INSERT INTO `transport` (`id`, `nom_agence`, `nom_transport`, `type`, `description`, `prix`, `image`) VALUES
@@ -207,38 +223,38 @@ INSERT INTO `transport` (`id`, `nom_agence`, `nom_transport`, `type`, `descripti
 -- --------------------------------------------------------
 
 --
--- Structure de la table `user`
+-- Table structure for table `user`
 --
 
 DROP TABLE IF EXISTS `user`;
 CREATE TABLE IF NOT EXISTS `user` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `nom` varchar(30) COLLATE utf8mb4_general_ci NOT NULL,
-  `prenom` varchar(30) COLLATE utf8mb4_general_ci NOT NULL,
+  `nom` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `prenom` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `email` varchar(150) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `username` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
-  `password` varchar(50) COLLATE utf8mb4_general_ci NOT NULL,
+  `password` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `telephone` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `image` varchar(150) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
-  `sexe` varchar(20) COLLATE utf8mb4_general_ci NOT NULL,
+  `sexe` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `dateN` date NOT NULL,
-  `cin` varchar(20) COLLATE utf8mb4_general_ci NOT NULL,
+  `cin` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `pays` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
-  `ville` varchar(50) COLLATE utf8mb4_general_ci NOT NULL,
+  `ville` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `codePostale` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
-  `adresse` varchar(100) COLLATE utf8mb4_general_ci NOT NULL,
+  `adresse` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `etat` int NOT NULL,
   `type` int NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Déchargement des données de la table `user`
+-- Dumping data for table `user`
 --
 
 INSERT INTO `user` (`id`, `nom`, `prenom`, `email`, `username`, `password`, `telephone`, `image`, `sexe`, `dateN`, `cin`, `pays`, `ville`, `codePostale`, `adresse`, `etat`, `type`) VALUES
-(1, 'ben hadj khalifa', 'wassim', 'benhadjkhalifawassim@gmail.com', 'wassimbhk', 'wassim123', '+21696454585', 'person_3.jpg', 'homme', '1998-09-24', '04455669', 'Tunisie', 'Sousse', '4070', 'msaken', 1, 0),
-(2, 'bouhlel', 'hadil', 'bouhlelhadil1@gmail.com', 'hadilbl', 'hadil123', '+21696454585', 'person_4', 'femme', '1997-09-24', '12835656', 'tunisie', 'Sousse-msaken', '4070', 'rue asyout', 1, 0);
+(1, 'ben hadj khalifa', 'wassim', 'benhadjkhalifawassim@gmail.com', 'admin1', 'admin1', '+21696454585', 'person_3.jpg', 'homme', '1998-09-24', '04455669', 'Tunisie', 'Sousse', '4070', 'msaken', 1, 0),
+(2, 'bouhlel', 'hadil', 'bouhlelhadil1@gmail.com', 'admin2', 'admin2', '+21696454585', 'person_4', 'femme', '1997-09-24', '12835656', 'tunisie', 'Sousse-msaken', '4070', 'rue asyout', 1, 1);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

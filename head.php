@@ -1,5 +1,9 @@
 <?php
-require_once('connexion/connexion.php');
+	if ( !isset($_SESSION) ) { session_start(); }
+	require_once('connexion/connexion.php');
+	if ( isset($_SESSION['id'] ) ) {
+		$currentUser=$scanne->getCptById($_SESSION['id']);
+	}
 ?>
 <!DOCTYPE html>
 <html lang="en">

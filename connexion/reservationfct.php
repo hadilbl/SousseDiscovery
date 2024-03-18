@@ -23,18 +23,24 @@ class reservationfct
         }
         return $table;
     }
-    public function create($idfor, $type, $datereservation, $periode)
+    public function create($idfor, $type, $idClient, $dateD, $dateF)
     {
-        $idfor = addslashes($idfor);
-        $type = addslashes($type);
-        $datereservation = date('Y-m-d à H:i');
-        $query = mysqli_query($this->db, "INSERT INTO `reservation`(`idfor`, `type`, `datereservation`, `periode`) VALUES ('$idfor','$type','$datereservation','$periode')");
-        if ($query) {
+        $dateReservation = date('Y-m-d à H:i');
+        $query = mysqli_prepare($this->db, "INSERT INTO `reservation`(`idfor`, `type`, `idClient`, `dateD`, `dateF`, `dateReservation`, `etat`) VALUES (?, ?, ?, ?, ?, ?, 1)");
+    
+        mysqli_stmt_bind_param($query, "issssi", $idfor, $type, $idClient, $dateD, $dateF, $dateReservation);
+    
+        mysqli_stmt_execute($query);
+    
+        if (mysqli_stmt_affected_rows($query) > 0) {
+            mysqli_stmt_close($query);
             return true;
         } else {
+            mysqli_stmt_close($query);
             return false;
         }
     }
+    
     public function update($idreservation,$idfor, $type, $datereservation, $periode)
     {
         $query = mysqli_query($this->db, "UPDATE `reservation` SET `idfor`='$idfor', `type`='$type' ,`datereservation`='$datereservation','periode'='$periode'  WHERE `id`='$idreservation'");

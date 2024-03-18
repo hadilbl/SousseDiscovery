@@ -62,4 +62,18 @@ class destinationfct
         // Return nomber of rows
         return $nombre;
     }
+    // Get by id
+    public function getById($id)
+    {
+        $stmt = mysqli_prepare($this->db, "SELECT * FROM `destination` WHERE `id` = ?");
+        if ($stmt === false) {
+            return false;
+        }
+        mysqli_stmt_bind_param($stmt, "i", $id);
+        mysqli_stmt_execute($stmt);
+        $result = mysqli_stmt_get_result($stmt);
+        $row = mysqli_fetch_assoc($result);
+        mysqli_stmt_close($stmt);
+        return $row;
+    }
 }

@@ -1,5 +1,11 @@
-
-<?php require_once('connexion.php'); ?>
+<?php
+	if ( !isset($_SESSION) ) { session_start(); }
+	if ( !isset($_SESSION['id'] ) && strpos( $_SERVER['REQUEST_URI'], 'connexion/index.php' ) === false ) { header ( "location:connexion/index.php" ); }
+	require_once('connexion.php');
+	if ( isset($_SESSION['id'] ) ) {
+		$currentUser=$scanne->getCptById($_SESSION['id']);
+	}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

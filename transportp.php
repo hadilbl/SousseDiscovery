@@ -42,7 +42,7 @@
                             </div>
                             <h3 class="heading"><a href="#"><?= $item["nom_transport"]; ?></a></h3>
                             <p><?= $item["nom_agence"]; ?></p>
-                            <p><a href="#" class="btn btn-primary">Réserver</a></p>
+                            <p><a href="booking.php?type=Transport&id=<?= $item['id'] ; ?>" class="btn btn-primary">Réserver</a></p>
                         </div>
                     </div>
 
