@@ -7,11 +7,11 @@ class signupfct
     {
         $this->db = $db;
     }
-    public function create($name, $firstname, $sex, $username, $password, $cin, $phone, $email, $address)
+    public function create($nom, $prenom, $email, $username, $password, $telephone,$sexe, $dateN, $cin, $pays, $ville, $codePostale, $addresse)
     {
-        $name = addslashes($name);
+        $nom = addslashes($nom);
         $password = md5($password);
-        $query = mysqli_query($this->db, "INSERT INTO `admin`(`name`, `firstname`, `sex`, `username`, `password`, `cin`, `phone`, `email`, `address`) VALUES ('$name','$firstname','$sex','$username','$password','$cin','$phone','$email','$address')");
+        $query = mysqli_query($this->db, "INSERT INTO `user`(`nom`,`prenom`,`email`,`username`,`password`,`telephone`,`sexe`,`dateN`,`cin`,`pays`,`ville`, `codePostale`, `adresse`) VALUES ('$nom', '$prenom', '$email', '$username', '$password', '$telephone','$sexe', '$dateN', '$cin', '$pays', '$ville', '$codePostale', '$addresse')");
         if ($query) {
             return true;
         } else {

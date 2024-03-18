@@ -63,5 +63,19 @@ class reservationfct
             return false;
         }
     }
+
+    public function getlistbyclient($idClient) 
+    {
+        
+        $table = array();
+        
+        $query = mysqli_query($this->db, "SELECT * FROM `reservation` where `idClient`='$idClient'");
+       
+        while ($result = mysqli_fetch_array($query)) {
+            $table[] = $result;
+        }
+        return $table;
+    }
+
 }
 ?>

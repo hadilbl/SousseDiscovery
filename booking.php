@@ -18,7 +18,7 @@ require_once('navbar.php');
     <div class="container">
         <div class="row no-gutters slider-text js-fullheight align-items-end justify-content-center">
             <div class="col-md-9 ftco-animate pb-5 text-center">
-                <h1 class="mb-0 bread">Formulaire reservation</h1>
+                <h1 class="mb-0 bread">Formulaire Réservation</h1>
             </div>
         </div>
     </div>
@@ -104,6 +104,14 @@ require_once('navbar.php');
         ?>
     </div>
 </section>
+
+<?php 
+if (isset($_POST['reservation'])) {
+        $idclient = $_POST['reservation'];
+        echo ($reservationfct->getlistbyclient($idclient)) ? $success : $danger;
+      }
+?>
+<div class="row "><a  class="btn btn-primary py-3 px-5" name="reservation">Consulter Votre Réservations</a></div>
 <?php
 require_once('footer.php');
 include('loader.php');
