@@ -49,6 +49,7 @@ require_once('navbar.php');
                         echo ($reservationfct->create($idFor, $type, $currentUser['id'], $_POST['dateD'], $_POST['dateF'])) ? $success : $danger;
                     }
                 };
+                
         ?>
             <div class="row block-10">
                 <div class="col-md-7">
@@ -96,7 +97,20 @@ require_once('navbar.php');
                 <div class="col-md-5 order-md-last d-flex">
                     <img src="images/<?= $For['image']; ?>" alt="" class="image-booking">
                 </div>
+                
             </div>
+            <div class="row">
+    
+            <div class="row">
+    <div class="text-right">
+        <a href="mes_reservations.php" class="btn btn-primary py-3 px-5">Consulter Votre Réservations</a>
+    </div>
+    <form action="connexion/logout.php" method="post">
+    <button type="submit" class="btn btn-danger">Déconnecter</button>
+</form>
+</div>
+</div>
+
         <?php
             } else {
                 echo ('<div class="alert alert-danger" role="alert"><strong>"Erreur"</strong> lors de la terminaison de cette opération, vous devez <a href="connexion/index.php">connecter</a> a votre compte</div>');
@@ -105,13 +119,6 @@ require_once('navbar.php');
     </div>
 </section>
 
-<?php 
-if (isset($_POST['reservation'])) {
-        $idclient = $_POST['reservation'];
-        echo ($reservationfct->getlistbyclient($idclient)) ? $success : $danger;
-      }
-?>
-<div class="row "><a  class="btn btn-primary py-3 px-5" name="reservation">Consulter Votre Réservations</a></div>
 <?php
 require_once('footer.php');
 include('loader.php');
