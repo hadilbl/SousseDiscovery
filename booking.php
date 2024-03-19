@@ -97,12 +97,10 @@ require_once('navbar.php');
 
 
             <div class="row justify-content-center">
-
                 <a href="mes_reservations.php" class="btn btn-primary py-3 px-5">Consulter Votre Réservations</a>
-
-                <form action="connexion/logout.php" method="post">
-                    <button type="submit" class="btn btn-danger ml-5">Déconnecter</button>
-                </form>
+            </div>
+            <div class="row justify-content-center">
+            <a href="connexion/logout.php" class="btn btn-danger ml-3">Déconnecter</a>
             </div>
 
 

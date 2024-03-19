@@ -76,4 +76,30 @@ class hebergementfct
         mysqli_stmt_close($stmt);
         return $row;
     }
+    function get_hebergement_details($idhebergement) {
+        $db = new database(); // Créer une instance de la classe database
+    
+        // Récupérer la connexion à la base de données
+        $link = $db->getConnectionDB();
+    
+        try {
+            // Préparer la requête SQL
+            $query = "SELECT * FROM hebergements WHERE id = ?";
+            $stmt = $link->prepare($query);
+            // Lier les paramètres
+            $stmt->bind_param('i', $idhebergement);
+            // Exécuter la requête
+            $stmt->execute();
+            // Récupérer le résultat
+            $result = $stmt->get_result();
+            // Récupérer les détails de l'hébergement
+            $hebergement_details = $result->fetch_assoc();
+            // Retourner les détails de l'hébergement
+            return $hebergement_details;
+        } catch (mysqli_sql_exception $e) {
+            echo "Erreur lors de la récupération des détails de l'hébergement: " . $e->getMessage();
+            return false;
+        }
+    }
+    
 }

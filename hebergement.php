@@ -65,7 +65,7 @@
                 <span class="fa fa-star"></span>
               </p>
               
-              <h3><a href="#"><?= $item["nom"]; ?></a></h3>
+              <h3><a href="detailsheb.php"><?= $item["nom"]; ?></a></h3>
               <p class="location"><span class="fa fa-map-marker"></span><?= $item["localisation"]; ?></p>
               <ul>
                 <li><span class="flaticon-shower"></span>2</li>
