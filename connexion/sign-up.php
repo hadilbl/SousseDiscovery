@@ -26,29 +26,45 @@
                         $danger = '<div class="alert alert-danger" role="alert"><strong>' . "Erreur" . '</strong> ' . "lors de la terminaison de cette opération." . '</div>';
 
 
-                        if (isset($_POST['signup'])) {
-                          echo ($signupfct->create(
-                            $_POST['nom'],
-                            $_POST['prenom'],
-                            $_POST['email'],
-                            $_POST['username'],
-                            $_POST['password'],
-                            $_POST['telephone'],
-                            $_POST['sexe'],
-                            $_POST['dateN'],
-                            $_POST['cin'],
-                            $_POST['pays'],
-                            $_POST['ville'],
-                            $_POST['codePostale'],
-                            $_POST['addresse']
-                          )) ? $success : $danger;
+
+                          if (isset($_POST['signup'])) {
+                      
+                            if (isset($_FILES["image"]) && $_FILES["image"]["error"] == 0) {
+                              $targetPath = "../assets/img/"; // Specify the directory where you want to save the uploaded file
+                              $imageName = $_FILES["image"]["name"];
+                              $fileExtension = pathinfo($imageName, PATHINFO_EXTENSION);
+                              $image = $imageName;
+                              
+                              if (move_uploaded_file($_FILES["image"]["tmp_name"], $targetPath . $image)) {
+                                echo ($signupfct->create(
+                                  $_POST['nom'],
+                                  $_POST['prenom'],
+                                  $_POST['email'],
+                                  $_POST['username'],
+                                  $_POST['password'],
+                                  $_POST['telephone'],
+                                  $image,
+                                  $_POST['sexe'],
+                                  $_POST['dateN'],
+                                  $_POST['cin'],
+                                  $_POST['pays'],
+                                  $_POST['ville'],
+                                  $_POST['codePostale'],
+                                  $_POST['addresse']
+                                )) ? $success : $danger;
+                              } else {
+                                echo "Désolé, une erreur s'est produite lors du téléchargement de votre fichier.";
+                              }
+                            } else {
+                              echo "Erreur : aucun fichier téléchargé ou une erreur s'est produite lors du téléchargement.";
+                            }
                         }
                         ?>
                       </div>
                     </th>
                   </tr>
                   <div class="card-body">
-                    <form method="post" role="form">
+                  <form action="#" method='post' role="form" enctype="multipart/form-data">
                       <tr>
                         <td>
                           <div class="input-group input-group-outline mb-3">
@@ -139,8 +155,6 @@
                             <input type="text" class="form-control" name="codePostale" placeholder="codePostale" required>
                           </div>
                         </td>
-
-
                         <td>
                           <div class="input-group input-group-outline mb-3">
                             <label class="form-label"></label>
@@ -148,6 +162,15 @@
                           </div>
                         </td>
                       </tr>
+                      <tr>
+                        <td colspan="2">
+                        <div class="input-group input-group-outline mb-3">
+                      
+                      <input type="file" name="image" class="form-control-file" required>
+                      </div>
+                      </td>
+                    </tr>
+                     
                 </table>
                 <div class="form-check form-check-info text-start ps-0">
                   <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" checked required>

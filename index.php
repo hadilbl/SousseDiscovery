@@ -232,19 +232,19 @@ require_once('head.php');
 <div class="row justify-content-center mt-3"><a href="témoignage.php" class="btn btn-primary py-3 px-5 ">Donner votre témoignage</a></div>
 
 
-<section class="ftco-intro ftco-section ftco-no-pt mt-5">
-	<div class="container">
-		<div class="row justify-content-center">
-			<div class="col-md-12 text-center">
-				<div class="img" style="background-image: url(images/sousse1.jpg);">
-					<div class="overlay"></div>
-					<h2>We Are Pacific A Travel Agency</h2>
-					<p>We can manage your dream building A small river named Duden flows by their place</p>
-					<p class="mb-0"><a href="contact.php" class="btn btn-primary px-4 py-3">Contactez-Nous</a></p>
-				</div>
-			</div>
-		</div>
-	</div>
+<section class="ftco-intro ftco-section ftco-no-pt mt-3">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-12 text-center">
+                <div class="img" style="background-image: url(images/sousse1.jpg);">
+                    <div class="overlay"></div>
+                    <h2>NOUS SOMMES SOUSSE DISCOVERY</h2>
+                    <p>Nous pouvons organiser votre découverte du site touristique Sousse Discovery.</p>
+                    <p class="mb-0"><a href="contact.php" class="btn btn-primary px-4 py-3">Contactez-Nous</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
 </section>
 <?php require_once('footer.php'); ?>
 <?php include('loader.php'); ?>

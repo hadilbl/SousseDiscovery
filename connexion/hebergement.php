@@ -13,8 +13,8 @@
  
             if (isset($_POST['createheb'])) {
               if (isset($_FILES["image"]) && $_FILES["image"]["error"] == 0) {
-                $targetPath = "assets/img/"; // Specify the directory where you want to save the uploaded file
-                $imageName = $_FILES["image"]["name"];
+                $targetPath = "../images/";               
+               $imageName = $_FILES["image"]["name"];
                 $fileExtension = pathinfo($imageName, PATHINFO_EXTENSION);
                 $image = $imageName;
             
@@ -22,10 +22,10 @@
                 
                   echo ($hebergementfct->create($_POST['nom'],$_POST['localisation'], $_POST['prix'],$_POST['type'],$_POST['description'],$image)) ? $success : $danger;
                 } else {
-                  echo "Sorry, there was an error uploading your file.";
+                  echo "Désolé, une erreur s'est produite lors du téléchargement de votre fichier.";
                 }
               } else {
-                echo "Error: No file uploaded or an error occurred during upload.";
+                echo "Erreur : aucun fichier téléchargé ou une erreur s'est produite lors du téléchargement.";
               }
             }
         if (isset($_POST['update'])) {
@@ -45,7 +45,7 @@
                     <h1 class="modal-title fs-5" id="exampleModalLabel">Ajouter Hébergement</h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <form action="" method="POST">
+                <form action="#" method='post' role="form" enctype="multipart/form-data">
                     <div class="modal-body">
                         <div class="mb-3">
                             <label for="nom" class="col-form-label">nom d'hébergement</label>
@@ -96,11 +96,12 @@
                 <table class="table align-items-center justify-content-center mb-0">
                   <thead>
                     <tr>
+                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">image</th>
                       <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">hebergement</th>
                       <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Localisation</th>
                       <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Prix</th>
-                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder text-center opacity-7 ps-2">Type</th>
-                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder text-center opacity-7 ps-2">Description</th>
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Type</th>
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder  opacity-7 ps-2">Description</th>
                       <th></th>
                     </tr>
                   </thead>
@@ -110,19 +111,18 @@
                         foreach ($all as $i => $item):
                   ?>
                     <tr>
-                      <td>
-                        <div class="d-flex px-2">
-                          <div>
-                            <img src="../images/<?= $item["image"]; ?>" class="avatar avatar-sm rounded-circle me-2" alt="spotify">
-                          </div>
-                          <div class="my-auto">
-                            <h6 class="mb-0 text-sm"><?= $item["nom"]; ?></h6>
-                          </div>
-                          
-                        </div>
+                    <td>
+                        <img src="../images/<?= $item["image"]; ?>" class="avatar avatar-sm rounded-circle me-2"
+                          alt="spotify">
                       </td>
-                      <td class="align-middle text-center">
-                        <div class="d-flex align-items-center justify-content-center">
+                      <td>
+                        <h6 class="mb-0 text-sm">
+                          <?= $item["nom"]; ?>
+                        </h6>
+                      </td>
+                      
+                      <td >
+                        <div class="d-flex ">
                           <span class="me-2 text-xs font-weight-bold"><?= $item["localisation"]; ?></span>
                           
                         </div>
@@ -142,7 +142,7 @@
                       <td class="align-middle">
                       <button class="btn btn-link text-secondary mb-0">
                       <button type="button" class="btn btn-link text-secondary mb-0"
-                                            data-bs-toggle="modal" data-bs-target="#update<?= $item["id"]; ?>">
+                        data-bs-toggle="modal" data-bs-target="#update<?= $item["id"]; ?>">
                           Edit
                         </button>
                         

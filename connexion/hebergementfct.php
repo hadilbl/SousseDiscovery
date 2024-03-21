@@ -7,10 +7,10 @@ class hebergementfct
     {
         $this->db = $db;
     }
-    public function create($nom, $localisation, $prix, $image, $type, $description)
+    public function create($nom, $localisation, $prix, $type, $description, $image)
     {
         $name = addslashes($nom);
-        $query = mysqli_query($this->db, "INSERT INTO `hebergement`(`nom`, `localisation`, `prix`, `image`, `type`, `description`) VALUES ('$nom','$localisation','$prix','$image','$type','$description')");
+        $query = mysqli_query($this->db, "INSERT INTO `hebergement`(`nom`, `localisation`, `prix`, `type`, `description`, `image`) VALUES ('$nom', '$localisation', '$prix', '$type', '$description', '$image')");
         if ($query) {
             return true;
         } else {

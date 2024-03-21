@@ -7,10 +7,10 @@ class destinationfct
     {
         $this->db = $db;
     }
-    public function create($nom, $localisation, $prix, $image, $type, $description)
+    public function create($nom, $localisation,$type, $prix,  $description, $image)
     {
         $name = addslashes($nom);
-        $query = mysqli_query($this->db, "INSERT INTO `destination`(`nom`, `localisation`, `prix`, `image`, `type`, `description`) VALUES ('$nom','$localisation','$prix','$image','$type','$description')");
+        $query = mysqli_query($this->db, "INSERT INTO `destination`( `nom`, `localisation`,`prix`, `type`,  `description`, `image`) VALUES ('$nom','$localisation','$prix','$type','$description','$image')");
         if ($query) {
             return true;
         } else {
@@ -35,9 +35,9 @@ class destinationfct
         }
         return $table;
     }
-    public function update($iddestination, $nom, $localisation, $type, $prix)
+    public function update($iddestination, $nom, $localisation, $prix, $type,$description)
     {
-        $query = mysqli_query($this->db, "UPDATE `destination` SET `nom`='$nom', `localisation`='$localisation',`type`='$type' ,`prix`='$prix'  WHERE `id`='$iddestination'");
+        $query = mysqli_query($this->db, "UPDATE `destination` SET `nom`='$nom', `localisation`='$localisation',`prix`='$prix',`type`='$type',`description`='$description'   WHERE `id`='$iddestination'");
         if ($query) {
             return true;
         } else {

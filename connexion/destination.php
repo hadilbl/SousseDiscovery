@@ -6,24 +6,28 @@
       <?php
       $success = '<div class="alert alert-success" role="alert">' . "Opération terminée avec" . ' <strong>' . "succès" . '</strong>.</div>';
       $danger = '<div class="alert alert-danger" role="alert"><strong>' . "Erreur" . '</strong> ' . "lors de la terminaison de cette opération." . '</div>';
+     
+
       if (isset($_POST['createvis'])) {
+
         if (isset($_FILES["image"]) && $_FILES["image"]["error"] == 0) {
-          $targetPath = "../images";
+          $targetPath = "../images/";
           $imageName = $_FILES["image"]["name"];
           $fileExtension = pathinfo($imageName, PATHINFO_EXTENSION);
           $image = $imageName;
+     
           if (move_uploaded_file($_FILES["image"]["tmp_name"], $targetPath . $image)) {
-            echo ($destinationfct->create($_POST['nom'], $_POST['localisation'], $_POST['prix'], $_POST['type'], $_POST['description'], $image)) ? $success : $danger;
+            echo ($destinationfct->create($_POST['nom'], $_POST['localisation'], $_POST['type'], $_POST['prix'], $_POST['description'], $image)) ? $success : $danger;
           } else {
-            echo "Sorry, there was an error uploading your file.";
+            echo "Désolé, une erreur s'est produite lors du téléchargement de votre fichier.";
           }
         } else {
-          echo "Error: No file uploaded or an error occurred during upload.";
+          echo "Erreur : aucun fichier téléchargé ou une erreur s'est produite lors du téléchargement.";
         }
       }
       if (isset($_POST['update'])) {
         $iddestination = $_POST['update'];
-        echo ($destinationfct->update($iddestination, $_POST['nom'], $_POST['localisation'], $_POST['type'], $_POST['prix'])) ? $success : $danger;
+        echo ($destinationfct->update($iddestination, $_POST['nom'], $_POST['localisation'], $_POST['type'], $_POST['prix'],$_POST['description'])) ? $success : $danger;
       }
       if (isset($_POST['delete'])) {
         $iddestination = $_POST['delete'];
@@ -34,13 +38,13 @@
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
-              <h1 class="modal-title fs-5" id="exampleModalLabel">Ajoute d'un destination</h1>
+              <h1 class="modal-title fs-5" id="exampleModalLabel">Ajoute d'un visite</h1>
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <form action="" method="POST">
+            <form action="#" method='post' role="form" enctype="multipart/form-data">
               <div class="modal-body">
                 <div class="mb-3">
-                  <label for="nom" class="col-form-label">nom d'un destination</label>
+                  <label for="nom" class="col-form-label">nom d'un visite</label>
                   <input type="text" class="form-control" name="nom" required>
                 </div>
                 <div class="mb-3">
@@ -48,13 +52,14 @@
                   <input type="text" class="form-control" name="localisation" required>
                 </div>
                 <div class="mb-3">
-                  <label for="prix" class="col-form-label">prix</label>
-                  <input type="text" class="form-control" name="prix" required>
-                </div>
-                <div class="mb-3">
                   <label for="type" class="col-form-label">Type</label>
                   <input type="text" class="form-control" name="type" required>
                 </div>
+                <div class="mb-3">
+                  <label for="prix" class="col-form-label">prix</label>
+                  <input type="text" class="form-control" name="prix" required>
+                </div>
+                
                 <div class="mb-3">
                   <label for="description" class="col-form-label">Description</label>
                   <input type="text" class="form-control" name="description" required>
@@ -88,12 +93,14 @@
                 <thead>
                   <tr>
                     <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">image</th>
-                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Destination</th>
+                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">visite</th>
                     <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Localisation
                     </th>
                     <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Type</th>
                     <th class="text-uppercase text-secondary text-xxs font-weight-bolder text-center opacity-7 ps-2">
                       prix</th>
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder  opacity-7 ps-2">
+                      Description</th>
                     <th></th>
                   </tr>
                 </thead>
@@ -129,6 +136,11 @@
                           <?= $item["prix"]; ?>
                         </p>
                       </td>
+                      <td>
+                        <p class="text-sm font-weight-bold mb-0">
+                          <?= $item["description"]; ?>
+                        </p>
+                      </td>
                       <td class="align-middle">
                         <button class="btn btn-link text-secondary mb-0">
                           <button type="button" class="btn btn-link text-secondary mb-0" data-bs-toggle="modal"
@@ -162,14 +174,14 @@
           <div class="modal-content">
             <div class="modal-header">
               <h1 class="modal-title fs-5" id="exampleModalLabel">
-                Éditer élément
+                Éditer Visite
               </h1>
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <form action="" method="POST">
               <div class="modal-body">
                 <div class="mb-3">
-                  <label for="nom" class="col-form-label">Nom Du Destination</label>
+                  <label for="nom" class="col-form-label">Nom Du visite</label>
                   <input type="text" id="nom" name="nom" value="<?= $item["nom"]; ?>" placeholder="<?= $item["nom"]; ?>"
                     required>
                 </div>
@@ -187,6 +199,11 @@
                   <label for="prix" class="col-form-label">prix</label>
                   <input type="text" id="prix" name="prix" value="<?= $item["prix"]; ?>"
                     placeholder="<?= $item["prix"]; ?>" required>
+                </div>
+                <div class="mb-3">
+                  <label for="description" class="col-form-label">description</label>
+                  <input type="text" id="description" name="description" value="<?= $item["description"]; ?>"
+                    placeholder="<?= $item["description"]; ?>" required>
                 </div>
               </div>
               <div class="modal-footer">
@@ -214,7 +231,7 @@
             <form action="" method="POST">
               <div class="modal-body">
                 <p class="mb-3">
-                  Voulez-vous supprimer cette destination ?
+                  Voulez-vous supprimer cette visite ?
                 </p>
               </div>
               <div class="modal-footer">

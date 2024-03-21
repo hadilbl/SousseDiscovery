@@ -12,19 +12,19 @@
 
       if (isset($_POST['createtrans'])) {
         if (isset($_FILES["image"]) && $_FILES["image"]["error"] == 0) {
-          $targetPath = "assets/img/"; // Specify the directory where you want to save the uploaded file
+          $targetPath = "../images/";
           $imageName = $_FILES["image"]["name"];
           $fileExtension = pathinfo($imageName, PATHINFO_EXTENSION);
           $image = $imageName;
 
           if (move_uploaded_file($_FILES["image"]["tmp_name"], $targetPath . $image)) {
-
+            
             echo ($transportfct->create($_POST['nom_agence'], $_POST['nom_transport'], $_POST['type'], $_POST['description'], $_POST['prix'], $image)) ? $success : $danger;
           } else {
-            echo "Sorry, there was an error uploading your file.";
+            echo "Désolé, une erreur s'est produite lors du téléchargement de votre fichier.";
           }
         } else {
-          echo "Error: No file uploaded or an error occurred during upload.";
+          echo "Erreur : aucun fichier téléchargé ou une erreur s'est produite lors du téléchargement.";
         }
       }
       if (isset($_POST['update'])) {
@@ -44,7 +44,7 @@
               <h1 class="modal-title fs-5" id="exampleModalLabel">Ajoute Transport</h1>
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <form action="" method="POST">
+            <form action="#" method='post' role="form" enctype="multipart/form-data">
               <div class="modal-body">
                 <div class="mb-3">
                   <label for="Nom_agence" class="col-form-label">Nom agence</label>
@@ -54,8 +54,6 @@
                   <label for="nom_transport" class="col-form-label">nom transport</label>
                   <input type="text" class="form-control" name="nom_transport" required>
                 </div>
-
-
 
                 <div class="mb-3">
                   <label for="type" class="col-form-label">Type</label>
