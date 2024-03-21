@@ -6,7 +6,7 @@
                 © <script>
                   document.write(new Date().getFullYear())
                 </script>,
-                   Developed by  
+                   Développés par  
                 <a class="font-weight-bold text-muted" target="_blank">Mohamed Ali bhk </a> <i class="fa fa-heart" aria-hidden="true"></i>
                 <a class="font-weight-bold text-muted" target="_blank">Bouhlel Hadil </a>
               </div>
@@ -15,10 +15,10 @@
               <ul class="nav nav-footer justify-content-center justify-content-lg-end">
                 
                 <li class="nav-item">
-                  <a href="" class="nav-link text-muted" target="_blank">About Us</a>
+                  <a href="" class="nav-link text-muted" target="_blank"></a>
                 </li>
                 <li class="nav-item">
-                  <a href="" class="nav-link text-muted" target="_blank">Blog</a>
+                  <a href="" class="nav-link text-muted" target="_blank"></a>
                 </li>
                 
               </ul>

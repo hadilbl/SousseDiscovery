@@ -107,7 +107,7 @@
                         <td>
                           <div class="input-group input-group-outline mb-3">
                             <label class="form-label date-booking"></label>
-                            <input type="text" class="form-control checkin_date" name="dateN" placeholder="date" required>
+                            <input type="date" class="form-control checkin_date" name="dateN" placeholder="date" required>
                           </div>
                         </td>
                         <td>
@@ -144,7 +144,7 @@
                         <td>
                           <div class="input-group input-group-outline mb-3">
                             <label class="form-label"></label>
-                            <input type="text" class="form-control" name="addresse" placeholder="addresse" required>
+                            <input type="text" class="form-control" name="addresse" placeholder="Addresse" required>
                           </div>
                         </td>
                       </tr>
@@ -163,7 +163,7 @@
               <div class="card-footer text-center pt-0 px-lg-2 px-1">
                 <p class="mb-2 text-sm mx-auto">
                   Vous avez déjà un compte?
-                  <a href="../pages/sign-in.php" class="text-primary text-gradient font-weight-bold">Se connecter</a>
+                  <a href="index.php" class="text-primary text-gradient font-weight-bold">Se connecter</a>
                 </p>
               </div>
             </div>
