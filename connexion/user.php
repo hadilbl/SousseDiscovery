@@ -11,7 +11,7 @@
 
       if (isset($_POST['update'])) {
         $iduser = $_POST['update'];
-        echo ($userfct->update($iduser, $_POST['nom'], $_POST['prenom'], $_POST['email'], $_POST['username'], $_POST['password'], $_POST['telephone'], $_POST['dateN'], $_POST['sexe'], $_POST['cin'], $_POST['pays'], $_POST['ville'], $_POST['codePostale'], $_POST['adresse'])) ? $success : $danger;
+        echo ($userfct->update($iduser, $_POST['nom'], $_POST['etat'], $_POST['type'])) ? $success : $danger;
       }
 
       if (isset($_POST['delete'])) {
@@ -107,73 +107,22 @@
                 </div>
 
                 <div class="mb-3">
-                  <label for="prenom" class="col-form-label col-md-3">prenom</label>
-                  <input type="text" id="prenom" name="prenom" value="<?= $item["prenom"]; ?>" placeholder="<?= $item["prenom"]; ?>" required>
+                  <label for="etat" class="col-form-label col-md-3">etat</label>
+                  <input type="text" id="etat" name="etat" value="<?= $item["etat"]; ?>" placeholder="<?= $item["etat"]; ?>" required>
                 </div>
-
-
+                
                 <div class="mb-3">
-                  <label for="email" class="col-form-label col-md-3">email</label>
-                  <input type="text" id="email" name="email" value="<?= $item["email"]; ?>" placeholder="<?= $item["email"]; ?>" required>
-                </div>
-                <div class="mb-3">
-                  <label for="username" class="col-form-label">username</label>
-                  <input type="text" id="username" name="username" value="<?= $item["username"]; ?>" placeholder="<?= $item["username"]; ?>" required>
+                  <label for="type" class="col-form-label col-md-3">type</label>
+                  <input type="text" id="type" name="type" value="<?= $item["type"]; ?>" placeholder="<?= $item["type"]; ?>" required>
                 </div>
 
 
-                <div class="mb-3">
-                  <label for="password" class="col-form-label">password</label>
-                  <input type="text" id="password" name="password" value="<?= $item["password"]; ?>" placeholder="<?= $item["password"]; ?>" required>
-                </div>
-
-                <div class="mb-3">
-                  <label for="telephone" class="col-form-label">telephone</label>
-                  <input type="text" id="telephone" name="telephone" value="<?= $item["telephone"]; ?>" placeholder="<?= $item["telephone"]; ?>" required>
-                </div>
-
-
-                <div class="mb-3">
-                  <label for="sexe" class="col-form-label">sexe</label>
-                  <input type="text" id="sexe" name="sexe" value="<?= $item["sexe"]; ?>" placeholder="<?= $item["sexe"]; ?>" required>
-                </div>
-
-                <div class="mb-3">
-                  <label for="dateN" class="col-form-label">dateN</label>
-                  <input type="text" id="dateN" name="dateN" value="<?= $item["dateN"]; ?>" placeholder="<?= $item["dateN"]; ?>" required>
-                </div>
-
-
-                <div class="mb-3">
-                  <label for="cin" class="col-form-label">cin</label>
-                  <input type="text" id="cin" name="cin" value="<?= $item["cin"]; ?>" placeholder="<?= $item["cin"]; ?>" required>
-                </div>
-
-                <div class="mb-3">
-                  <label for="pays" class="col-form-label">pays</label>
-                  <input type="text" id="pays" name="pays" value="<?= $item["pays"]; ?>" placeholder="<?= $item["pays"]; ?>" required>
-                </div>
-
-                <div class="mb-3">
-                  <label for="ville" class="col-form-label">ville</label>
-                  <input type="text" id="ville" name="ville" value="<?= $item["ville"]; ?>" placeholder="<?= $item["ville"]; ?>" required>
-                </div>
-
-
-                <div class="mb-3">
-                  <label for="codePostale" class="col-form-label">codePostale</label>
-                  <input type="text" id="codePostale" name="codePostale" value="<?= $item["codePostale"]; ?>" placeholder="<?= $item["codePostale"]; ?>" required>
-                </div>
-
-                <div class="mb-3">
-                  <label for="adresse" class="col-form-label">Adresse</label>
-                  <input type="text" id="adresse" name="adresse" value="<?= $item["adresse"]; ?>" placeholder="<?= $item["adresse"]; ?>" required>
-                </div>
+                
 
               </div>
               <div class="modal-footer">
                 <button type="submit" name="update" value="<?= $item["id"]; ?>" class="btn btn-outline-success">
-                  Confirmer
+                  Activer
                 </button>
                 <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal">
                   Annuler
@@ -190,14 +139,14 @@
           <div class="modal-content">
             <div class="modal-header">
               <h1 class="modal-title fs-5" id="exampleModalLabel">
-                Supprimer élément
+                Supprimer Utilisateur
               </h1>
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <form action="" method="POST">
               <div class="modal-body">
                 <p class="mb-3">
-                  Voulez-vous supprimer cette user ?
+                  Voulez-vous supprimer cette Utilisateur ?
                 </p>
               </div>
               <div class="modal-footer">

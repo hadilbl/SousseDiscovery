@@ -76,6 +76,12 @@ class reservationfct
         }
         return $table;
     }
+    public function getLastInsertedReservationId()
+    {
+        $query = mysqli_query($this->db, "SELECT LAST_INSERT_ID() as id");
+        $result = mysqli_fetch_assoc($query);
+        return $result['id'];
+    }
 
 }
 ?>

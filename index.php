@@ -97,10 +97,10 @@ require_once('head.php');
 					?>
 						<div class="item">
 							<div class="project-destination">
-								<a href="#" class="img" style="background-image: url(images/<?= $item["image"]; ?>);">
+								<a href="destination.php" class="img" style="background-image: url(images/<?= $item["image"]; ?>);">
 									<div class="text">
 										<h3><?= $item["nom"]; ?></h3>
-										<span>3 Tours</span>
+										
 									</div>
 								</a>
 							</div>
@@ -129,17 +129,17 @@ require_once('head.php');
 				<div class="col-md-4 ftco-animate">
 					<div class="project-wrap hotel">
 
-						<a href="#" class="img" style="background-image: url(images/<?= $item["image"]; ?>);">
+						<a href="hebergement.php" class="img" style="background-image: url(images/<?= $item["image"]; ?>);">
 							<span class="price"><?= $item["prix"]; ?> /personne</span>
 						</a>
 						<div class="text p-4">
 
 							
-							<h3><a href="#"><?= $item["nom"]; ?></a></h3>
+							<h3><a href="hebergement.php"><?= $item["nom"]; ?></a></h3>
 							<p class="location"><span class="fa fa-map-marker"></span> <?= $item["localisation"]; ?> </p>
 							<ul>
-								<li><span class="flaticon-shower"></span>2</li>
-								<li><span class="flaticon-king-size"></span>3</li>
+								<li><span class="flaticon-shower"></span></li>
+								<li><span class="flaticon-king-size"></span></li>
 								<li><span class="flaticon-mountains"></span><?= $item["type"]; ?></li>
 							</ul>
 						</div>

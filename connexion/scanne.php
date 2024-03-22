@@ -9,6 +9,8 @@ class scanne
     }
     public function getCnxCpt($username, $password)
     {
+        $username= addslashes($username);
+       $password = md5($password);
         $query = mysqli_query($this->db, "SELECT * FROM `user` WHERE `username` ='{$username}' AND `password` ='{$password}'");
         $result = mysqli_fetch_assoc($query);
         if ($query) {

@@ -57,18 +57,12 @@ require_once ('navbar.php'); ?>
               <span class="price"><?= $item["prix"]; ?>/personne</span>
             </a>
             <div class="text p-4">
-              <p class="star mb-2">
-                <span class="fa fa-star"></span>
-                <span class="fa fa-star"></span>
-                <span class="fa fa-star"></span>
-                <span class="fa fa-star"></span>
-                <span class="fa fa-star"></span>
-              </p>
+              
               <h3><a href="detailsheb.php?id=<?= $item['id']; ?>"><?= $item["nom"]; ?></a></h3>
               <p class="location"><span class="fa fa-map-marker"></span><?= $item["localisation"]; ?></p>
               <ul>
-                <li><span class="flaticon-shower"></span>2</li>
-                <li><span class="flaticon-king-size"></span>3</li>
+                <li><span class="flaticon-shower"></span></li>
+                <li><span class="flaticon-king-size"></span></li>
                 <li><span class="flaticon-sun-umbrella"></span><?= $item["type"]; ?></li>
                 <li class="mb-0"><a href="booking.php?type=Hebergement&id=<?= $item['id']; ?>" class="btn btn-primary  px-2 py-1">Réserver</a></li>
               </ul>

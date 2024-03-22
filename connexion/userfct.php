@@ -23,9 +23,9 @@ class userfct
         }
         return $table;
     }
-    public function update($iduser,$nom,$prenom,$email,$username,$password,$telephone,$dateN,$sexe,$cin,$pays,$ville,$codePostale,$adresse)
+    public function update($iduser,$nom,$etat,$type)
     {
-        $query = mysqli_query($this->db, "UPDATE `user` SET `nom`='$nom',`prenom`='$prenom',`email`='$email',`username`='$username',`password`='$password',`telephone`='$telephone',`sexe`='$sexe',`dateN`='$dateN',`cin`='$cin',`pays`='$pays',`ville`='$ville',`codePostale`='$codePostale',`adresse`='$adresse' WHERE `id`='$iduser'");
+        $query = mysqli_query($this->db, "UPDATE `user` SET `nom`='$nom',`etat`='$etat',`type`='$type' WHERE `id`='$iduser'");
       
         if ($query) {
             return true;

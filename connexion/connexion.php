@@ -9,6 +9,7 @@ require_once("feedbackfct.php");
 require_once("reservationfct.php");
 require_once("contactfct.php");
 require_once("transportfct.php");
+require_once("notificationfct.php");
 
 
 
@@ -24,6 +25,7 @@ $feedbackfct= new feedbackfct($database->getConnectionDB());
 $reservationfct= new reservationfct($database->getConnectionDB());
 $contactfct= new contactfct($database->getConnectionDB());
 $transportfct= new transportfct($database->getConnectionDB());
+$notificationfct= new notificationfct($database->getConnectionDB());
 
 
 ?>

@@ -65,7 +65,7 @@ require_once ('navbar.php');
                      <span class="price"><?= $item["prix"]; ?>/person</span>
                   </a>
                   <div class="text p-4">
-                     <span class="days">8 Days Tour</span>
+                     <span class="days"></span>
                      <h3><a href="detailsvis.php?id=<?= $item['id']; ?>"><?= $item["nom"]; ?></a></h3>
                      <p class="location"><span class="fa fa-map-marker"></span><?= $item["localisation"]; ?></p>
                      <ul>

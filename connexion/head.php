@@ -1,6 +1,6 @@
 <?php
 	if ( !isset($_SESSION) ) { session_start(); }
-	if ( !isset($_SESSION['id'] ) && strpos( $_SERVER['REQUEST_URI'], 'connexion/index.php' ) === false ) { header ( "location:connexion/index.php" ); }
+	if ( !isset($_SESSION['id'] ) && strpos( $_SERVER['REQUEST_URI'], 'connexion/index.php' ) === false ) { header ( "location:connexion/sign-up.php" ); }
 	require_once('connexion.php');
 	if ( isset($_SESSION['id'] ) ) {
 		$currentUser=$scanne->getCptById($_SESSION['id']);

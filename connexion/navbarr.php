@@ -98,7 +98,7 @@
             <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
               <i class="fa fa-sign-in"></i>
             </div>
-            <span class="nav-link-text ms-1">Sign In</span>
+            <span class="nav-link-text ms-1">connexion</span>
           </a>
         </li>
         <li class="nav-item">
@@ -106,7 +106,7 @@
             <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
               <i class="fa fa-sign-out"></i>
             </div>
-            <span class="nav-link-text ms-1">Sign Up</span>
+            <span class="nav-link-text ms-1">Inscription</span>
           </a>
         </li>
       </ul>
@@ -130,11 +130,9 @@
               <input type="text" class="form-control">
             </div>
           </div>
-          <ul class="navbar-nav  justify-content-end">
+         
             
-            <li class="mt-2">
-              <a class="github-button" href="https://github.com/creativetimofficial/material-dashboard" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star creativetimofficial/material-dashboard on GitHub">Star</a>
-            </li>
+           
             <li class="nav-item d-xl-none ps-3 d-flex align-items-center">
               <a href="javascript:;" class="nav-link text-body p-0" id="iconNavbarSidenav">
                 <div class="sidenav-toggler-inner">

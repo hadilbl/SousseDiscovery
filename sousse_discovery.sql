@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1:3306
--- Generation Time: Mar 18, 2024 at 05:28 PM
--- Server version: 8.2.0
--- PHP Version: 8.2.13
+-- Hôte : 127.0.0.1:3306
+-- Généré le : ven. 22 mars 2024 à 00:55
+-- Version du serveur : 8.0.31
+-- Version de PHP : 8.0.26
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `sousse_discovery`
+-- Base de données : `sousse_discovery`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `contact`
+-- Structure de la table `contact`
 --
 
 DROP TABLE IF EXISTS `contact`;
@@ -40,7 +40,7 @@ CREATE TABLE IF NOT EXISTS `contact` (
 ) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `contact`
+-- Déchargement des données de la table `contact`
 --
 
 INSERT INTO `contact` (`id`, `nom`, `email`, `sujet`, `message`, `dateenvoi`, `etat`) VALUES
@@ -49,7 +49,7 @@ INSERT INTO `contact` (`id`, `nom`, `email`, `sujet`, `message`, `dateenvoi`, `e
 -- --------------------------------------------------------
 
 --
--- Table structure for table `destination`
+-- Structure de la table `destination`
 --
 
 DROP TABLE IF EXISTS `destination`;
@@ -62,10 +62,10 @@ CREATE TABLE IF NOT EXISTS `destination` (
   `description` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `image` varchar(250) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=20 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `destination`
+-- Déchargement des données de la table `destination`
 --
 
 INSERT INTO `destination` (`id`, `nom`, `localisation`, `type`, `prix`, `description`, `image`) VALUES
@@ -81,7 +81,7 @@ INSERT INTO `destination` (`id`, `nom`, `localisation`, `type`, `prix`, `descrip
 -- --------------------------------------------------------
 
 --
--- Table structure for table `feedback`
+-- Structure de la table `feedback`
 --
 
 DROP TABLE IF EXISTS `feedback`;
@@ -93,10 +93,10 @@ CREATE TABLE IF NOT EXISTS `feedback` (
   `Commentaire` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `date` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=16 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=18 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `feedback`
+-- Déchargement des données de la table `feedback`
 --
 
 INSERT INTO `feedback` (`id`, `nom`, `prenom`, `avatar`, `Commentaire`, `date`) VALUES
@@ -104,12 +104,14 @@ INSERT INTO `feedback` (`id`, `nom`, `prenom`, `avatar`, `Commentaire`, `date`) 
 (2, 'Bouhlel', 'Mohamed', 'person_2.jpg', 'Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.', '2024-03-14 à 13:33'),
 (3, 'Bhk', 'wassim', 'person_3.jpg', 'Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.', '2024-03-12 à 19:48'),
 (4, 'Bouneb', 'Karim', 'person_4.jpg', 'Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.', '2024-03-14 à 13:46'),
-(14, 'Hadil', 'Bouhlel', 'person_2.jpg', 'fhfhghfghf', '2024-03-14 à 14:21');
+(14, 'Hadil', 'Bouhlel', 'person_2.jpg', 'fhfhghfghf', '2024-03-14 à 14:21'),
+(16, 'test', 'test', 'person_4.jpg', 'test', '2024-03-21 à 13:52'),
+(17, 'test2', 'test', 'person_3.jpg', 'yesy', '2024-03-21 à 13:52');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `hebergement`
+-- Structure de la table `hebergement`
 --
 
 DROP TABLE IF EXISTS `hebergement`;
@@ -118,28 +120,28 @@ CREATE TABLE IF NOT EXISTS `hebergement` (
   `nom` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `localisation` varchar(200) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `prix` int NOT NULL,
-  `image` varchar(150) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `type` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `description` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `image` varchar(150) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `hebergement`
+-- Déchargement des données de la table `hebergement`
 --
 
-INSERT INTO `hebergement` (`id`, `nom`, `localisation`, `prix`, `image`, `type`, `description`) VALUES
-(1, 'Mövenpick', 'Bd du 14 Janvier, Sousse 4039', 398, 'movinpick.avif', 'Hôtel', 'Le Mövenpick Resort & Marine Spa Sousse est un complexe situé dans le centre-ville de Sousse. Il dispose d\'un accès à une plage privée, de piscines d\'eau salée extérieures, ainsi que d\'un centre de bien-être et de sport.  Chaque chambre est dotée de la climatisation, d\'une télévision par satellite à écran plat et d\'une salle de bains privative. Certaines comprennent des peignoirs et un plateau/bouilloire. Elles offrent toutes une vue panoramique sur la mer, le jardin ou la piscine.  Les restaurants et les snack-bars du Mövenpick Resort & Marine Spa servent une cuisine internationale, y compris des plats méditerranéens et japonais ainsi que des grillades. Vous pourrez boire une sélection de boissons aux différents bars et cafés, notamment le bar de la piscine et l\'Aga Café. Un petit-déjeuner buffet est préparé tous les jours.  Ouverte 24h/24, la réception du Mövenpick Resort & Marine Spa propose un service de concierge. Vous trouverez une boutique sur place. Vous pourrez aussi pratiquer de nombreuses activités, telles que les sports nautiques, le volley-ball et le tennis de table. La connexion Wi-Fi est gratuit'),
-(2, 'Dar Badiaa', ' Sidi Bouraoui, 20 rue mosquée Hanafia, Sousse', 222, 'hote1.jpg', 'Maisond\'hôte', 'le Dar Badiaa propose un hébergement climatisé avec une terrasse et une connexion Wi-Fi gratuite. Pour votre confort, la maison d\'hôtes possède une entrée privée. Cette maison d\'hôtes propose des chambres familiales.  Tous les logements comprennent un coin salon, une télévision par satellite à écran plat ainsi qu\'une salle de bains privative pourvue de peignoirs, d\'une douche à l\'italienne, d\'un jacuzzi et d\'un bidet. Tous les logements disposent d\'un balcon avec coin repas extérieur et vue sur la cour intérieure. Le linge de lit et les serviettes de toilette sont fournis.  Vous séjournerez à proximité de Bou Jaafar, de la grande mosquée de Sousse et du musée archéologique de Sousse. '),
-(3, 'Sousse Palace Hotel & Spa', 'Av. Habib Bourguiba, Sousse', 322, 'palace.avif', 'Hôtel', 'Le Sousse palace hôtel & spa est un 5 étoiles de luxe rénové entièrement est ouvert en 2016.  Situé en centre ville, avec sa plage privé il est idéalement placé pour tous type de tourisme.  Nos chambres sont équipées de tout le confort que ce doit d\'avoir un hôtel de ce standing, wifi, tv IP, sèche cheveux, 2 téléphones.  Pour ce qui est de la Gastronomie l\'hôtel compte 3 restaurants panoramique au 3ème vue mer, 4ème vue mer, et 12ème étages vue ville et mer, un restaurant buffet, un snack sur la plage ouvert durant la période estivale, un bar principale, et un salon de thé.  Le centre de bien être met a disposition un hammam, un sauna, une piscine couverte avec jet, jaccuzi, et contre courants, également une salle de sport avec coach, et un spa .  L\'hôtel compte également 16 salles de sous commissions et une salle de congrès de capacité de 900 personnes.'),
-(4, 'JAZ Tour KHALEF', ' Boulevard du 14 Janvier, 4051, Sousse', 210, 'hotel1.webp', 'Hôtel', 'le JAZ Tour Khalef Thalasso & Spa, un hôtel familial qui vous apporte le meilleur de Sousse à votre portée. Vous profiterez de chambres relaxantes équipées d\'une télévision à écran plat, d\'un minibar et d\'une climatisation, et pourrez rester connecté pendant votre séjour car le Tour Khalef Marhaba Thalasso Hotel propose un wi-fi gratuit. L\'hôtel dispose d\'une conciergerie. De plus, le Tour Khalef Marhaba est doté d\'une piscine et d\'un salon, offrant un endroit plaisant pour se reposer après une journée bien remplie. Pour les clients avec véhicules, un parking gratuit est disponible. Grâce à son emplacement tout près des monuments populaires, comme Equestrian Statue of Habib Bourguiba (2,7 km) et Ribat (2,9 km), les clients du Tour Khalef Hotel pourront facilement profiter des attractions les plus célèbres de Sousse. Ponctuez votre séjour à Sousse d\'une dégustation de ribs local dans l\'un des restaurantes alentours, comme Farmers Steakhouse. Vous ne serez jamais à court de choses à faire dans les environs : explorez les sites historiques célèbres tels que Medina of Sousse. Nous sommes sûrs que vous apprécierez votre séjour au JAZ Tour Khalef Thalasso & Spa car vous pourrez découvrir tout ce que Sousse a à offrir.'),
-(5, 'Domaine de l\'Olivier Rouge', 'sidi bou ali', 250, 'rouge.jpg', 'Hôtel', '\r\nHôtel Domaine de l\'Olivier rouge à Sousse est près de sebkha Halk El Menzel, à moins de 4.0 km.\r\nLa maison d\'hôtes est également à 10 minutes de route d\'amphithéâtre d\'Ulissipira à Sousse.\r\nCet hôtel se compose de 20 chambres où les clients peuvent profiter d\'un balcon, un espace de repas et une cafetière/théière. Quelque pièce est équipée d\'une salle de bain privée. Dotées d\'une toilette séparée et d\'une douche, les salles de bains sont également équipées d\'un sèche-cheveux et des serviettes.\r\n'),
-(6, 'Dar zitoun', 'Sidi Bou Ali ', 150, 'zitoun.jpg', 'Maison d\'hôte', 'une maison d’hôte spacieux emplacement idéal, personnel amical et attentionné. Recommandé pour des vacances relaxantes.\r\nExcellent séjour le chalet est propre et bien entretenu. Chambres confortables. Restaurant délicieux avec un service attentif. Recommandé pour un séjour confortable et gastronomique');
+INSERT INTO `hebergement` (`id`, `nom`, `localisation`, `prix`, `type`, `description`, `image`) VALUES
+(1, 'Mövenpick', 'Bd du 14 Janvier, Sousse 4039', 398, 'Hôtel', 'Le Mövenpick Resort & Marine Spa Sousse est un complexe situé dans le centre-ville de Sousse. Il dispose d\'un accès à une plage privée, de piscines d\'eau salée extérieures, ainsi que d\'un centre de bien-être et de sport.  Chaque chambre est dotée de la climatisation, d\'une télévision par satellite à écran plat et d\'une salle de bains privative. Certaines comprennent des peignoirs et un plateau/bouilloire. Elles offrent toutes une vue panoramique sur la mer, le jardin ou la piscine.  Les restaurants et les snack-bars du Mövenpick Resort & Marine Spa servent une cuisine internationale, y compris des plats méditerranéens et japonais ainsi que des grillades. Vous pourrez boire une sélection de boissons aux différents bars et cafés, notamment le bar de la piscine et l\'Aga Café. Un petit-déjeuner buffet est préparé tous les jours.  Ouverte 24h/24, la réception du Mövenpick Resort & Marine Spa propose un service de concierge. Vous trouverez une boutique sur place. Vous pourrez aussi pratiquer de nombreuses activités, telles que les sports nautiques, le volley-ball et le tennis de table. La connexion Wi-Fi est gratuit', 'movinpick.avif'),
+(2, 'Dar Badiaa', ' Sidi Bouraoui, 20 rue mosquée Hanafia, Sousse', 222, 'Maisond\'hôte', 'le Dar Badiaa propose un hébergement climatisé avec une terrasse et une connexion Wi-Fi gratuite. Pour votre confort, la maison d\'hôtes possède une entrée privée. Cette maison d\'hôtes propose des chambres familiales.  Tous les logements comprennent un coin salon, une télévision par satellite à écran plat ainsi qu\'une salle de bains privative pourvue de peignoirs, d\'une douche à l\'italienne, d\'un jacuzzi et d\'un bidet. Tous les logements disposent d\'un balcon avec coin repas extérieur et vue sur la cour intérieure. Le linge de lit et les serviettes de toilette sont fournis.  Vous séjournerez à proximité de Bou Jaafar, de la grande mosquée de Sousse et du musée archéologique de Sousse. ', 'hote1.jpg'),
+(3, 'Sousse Palace Hotel & Spa', 'Av. Habib Bourguiba, Sousse', 322, 'Hôtel', 'Le Sousse palace hôtel & spa est un 5 étoiles de luxe rénové entièrement est ouvert en 2016.  Situé en centre ville, avec sa plage privé il est idéalement placé pour tous type de tourisme.  Nos chambres sont équipées de tout le confort que ce doit d\'avoir un hôtel de ce standing, wifi, tv IP, sèche cheveux, 2 téléphones.  Pour ce qui est de la Gastronomie l\'hôtel compte 3 restaurants panoramique au 3ème vue mer, 4ème vue mer, et 12ème étages vue ville et mer, un restaurant buffet, un snack sur la plage ouvert durant la période estivale, un bar principale, et un salon de thé.  Le centre de bien être met a disposition un hammam, un sauna, une piscine couverte avec jet, jaccuzi, et contre courants, également une salle de sport avec coach, et un spa .  L\'hôtel compte également 16 salles de sous commissions et une salle de congrès de capacité de 900 personnes.', 'palace.avif'),
+(4, 'JAZ Tour KHALEF', ' Boulevard du 14 Janvier, 4051, Sousse', 210, 'Hôtel', 'le JAZ Tour Khalef Thalasso & Spa, un hôtel familial qui vous apporte le meilleur de Sousse à votre portée. Vous profiterez de chambres relaxantes équipées d\'une télévision à écran plat, d\'un minibar et d\'une climatisation, et pourrez rester connecté pendant votre séjour car le Tour Khalef Marhaba Thalasso Hotel propose un wi-fi gratuit. L\'hôtel dispose d\'une conciergerie. De plus, le Tour Khalef Marhaba est doté d\'une piscine et d\'un salon, offrant un endroit plaisant pour se reposer après une journée bien remplie. Pour les clients avec véhicules, un parking gratuit est disponible. Grâce à son emplacement tout près des monuments populaires, comme Equestrian Statue of Habib Bourguiba (2,7 km) et Ribat (2,9 km), les clients du Tour Khalef Hotel pourront facilement profiter des attractions les plus célèbres de Sousse. Ponctuez votre séjour à Sousse d\'une dégustation de ribs local dans l\'un des restaurantes alentours, comme Farmers Steakhouse. Vous ne serez jamais à court de choses à faire dans les environs : explorez les sites historiques célèbres tels que Medina of Sousse. Nous sommes sûrs que vous apprécierez votre séjour au JAZ Tour Khalef Thalasso & Spa car vous pourrez découvrir tout ce que Sousse a à offrir.', 'hotel1.webp'),
+(5, 'Domaine de l\'Olivier Rouge', 'sidi bou ali', 250, 'Hôtel', '\r\nHôtel Domaine de l\'Olivier rouge à Sousse est près de sebkha Halk El Menzel, à moins de 4.0 km.\r\nLa maison d\'hôtes est également à 10 minutes de route d\'amphithéâtre d\'Ulissipira à Sousse.\r\nCet hôtel se compose de 20 chambres où les clients peuvent profiter d\'un balcon, un espace de repas et une cafetière/théière. Quelque pièce est équipée d\'une salle de bain privée. Dotées d\'une toilette séparée et d\'une douche, les salles de bains sont également équipées d\'un sèche-cheveux et des serviettes.\r\n', 'rouge.jpg'),
+(6, 'Dar zitoun', 'Sidi Bou Ali ', 150, 'Maison d\'hôte', 'une maison d’hôte spacieux emplacement idéal, personnel amical et attentionné. Recommandé pour des vacances relaxantes.\r\nExcellent séjour le chalet est propre et bien entretenu. Chambres confortables. Restaurant délicieux avec un service attentif. Recommandé pour un séjour confortable et gastronomique', 'zitoun.jpg');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `notification`
+-- Structure de la table `notification`
 --
 
 DROP TABLE IF EXISTS `notification`;
@@ -154,7 +156,7 @@ CREATE TABLE IF NOT EXISTS `notification` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `reservation`
+-- Structure de la table `reservation`
 --
 
 DROP TABLE IF EXISTS `reservation`;
@@ -163,31 +165,33 @@ CREATE TABLE IF NOT EXISTS `reservation` (
   `idfor` int NOT NULL,
   `type` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `idClient` int NOT NULL,
-  `dateD` varchar(50) COLLATE utf8mb4_general_ci NOT NULL,
-  `dateF` varchar(50) COLLATE utf8mb4_general_ci NOT NULL,
-  `dateReservation` varchar(50) COLLATE utf8mb4_general_ci NOT NULL,
+  `dateD` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `dateF` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `dateReservation` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `etat` int NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `reservation`
+-- Déchargement des données de la table `reservation`
 --
 
 INSERT INTO `reservation` (`id`, `idfor`, `type`, `idClient`, `dateD`, `dateF`, `dateReservation`, `etat`) VALUES
-(1, 0, '', 0, '', '', '2024-03-18', 0),
 (2, 2, 'Hebergement', 2, '3/11/2024', '3/27/2024', '2024', 1),
 (3, 2, 'Transport', 2, '3/17/2024', '3/26/2024', '2024', 1),
 (4, 2, 'Hebergement', 2, '3/3/2024', '3/26/2024', '2024', 1),
 (5, 2, 'Transport', 2, '3/26/2024', '3/31/2024', '2024', 1),
 (6, 2, 'Transport', 2, '3/26/2024', '3/31/2024', '2024', 1),
 (7, 2, 'Hebergement', 2, '3/20/2024', '3/31/2024', '2024', 1),
-(8, 4, 'Destination', 2, 'NULL', 'NULL', '2024', 1);
+(8, 4, 'Destination', 2, 'NULL', 'NULL', '2024', 1),
+(9, 5, 'Hebergement', 2, '3/7/2024', '3/27/2024', '2024', 1),
+(10, 3, 'Destination', 2, 'NULL', 'NULL', '2024', 1),
+(11, 1, 'Transport', 2, '3/1/2024', '4/5/2024', '2024', 1);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `transport`
+-- Structure de la table `transport`
 --
 
 DROP TABLE IF EXISTS `transport`;
@@ -200,14 +204,14 @@ CREATE TABLE IF NOT EXISTS `transport` (
   `prix` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `image` varchar(200) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `transport`
+-- Déchargement des données de la table `transport`
 --
 
 INSERT INTO `transport` (`id`, `nom_agence`, `nom_transport`, `type`, `description`, `prix`, `image`) VALUES
-(1, 'Agence BSA', 'Toyota Highlander ', 'Transport Privé', '7 places.6 Cylindres , 1.8L , 	Boite Auto , meilleure voiture familiale pour un voyage hors route.\n', '180', 'toyota.jpg'),
+(1, 'Agence BSA', 'Toyota Highlander ', 'Transport Privé', '7 places.6 Cylindres , 1.8L , 	Boite Auto , meilleure voiture familiale pour un voyage hors route.', '180', 'toyota.jpg'),
 (2, 'Agence BSA', 'KIA Picanto ', 'Transport Privé', '5 places.4 Cylindres ,1.2L, Boite Automatique ,VOLUME DE COFFRE 255L.', '80', 'kia.jpg'),
 (3, 'XCar', 'Hyundai i10', 'Transport Privé', '5 places.4 Cylindres ,1.2L, Boite Manuelle , petite voiture mais avec un gros VOLUME DE COFFRE 260L.', '80', 'i10.jpg'),
 (4, 'ALLURE RENT CAR', 'Hyundai i20', 'Transport Privé', '5 places.4 Cylindres ,1.2L, Boite Manuelle , petite voiture mais avec un VOLUME DE COFFRE important 352L.', '80', 'i20.png'),
@@ -218,12 +222,12 @@ INSERT INTO `transport` (`id`, `nom_agence`, `nom_transport`, `type`, `descripti
 (10, 'Gare de Sousse', 'Train', 'Transport Publique', '', 'selon le ville', 'train.jpg'),
 (11, 'Personne titulaire d\'une licence de taxi collectif', 'Louage jaune', 'Transport Publique', 'Le louage jaune se déplace dans la région de Sousse : Sousse - Msaken:1dt250, Sousse Kantaoui:1dt250, \r\nSousse - Sidi Bouali (Mall Of Sousse):1dt450,\r\n Sousse - Sahloul:1dt,\r\n Sousse-kalaa kbira:1dt ...', 'selon le ville ', 'louage1.jpg'),
 (12, 'Personne titulaire d\'une licence de taxi ', 'Taxi compteur', 'Transport Publique', 'Autre forme de louage mais avec on peut dire un secteur privé car c\'est le voyageur décide son destination privé. Il permet de mesurer le montant à percevoir en fonction de la durée de la course et de la distance 	parcourue lors de celle-ci.', 'compteur', 'taxi.jpg'),
-(13, 'Personne titulaire d\'une licence de taxi collectif', 'Louage a Bande Blue', 'Transport Publique', 'se déplace dans la région de Sousse ou on a : Sousse(Bir chobek) - Msaken , Msaken - Sahloul , Sousse(bir chobek) - Hammem Sousse ...', 'selon le ville ', 'taxi2.jpg\n');
+(14, 'Personne titulaire d\'une licence de taxi collectif', 'Louage a Bande Bleu', 'Transport Publique', 'se déplace dans la région de Sousse ou on a : Sousse(Bir chobek) - Msaken , Msaken - Sahloul , Sousse(bir chobek) - Hammem Sousse ...', 'selon le ville ', 'taxi2.jpg');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `user`
+-- Structure de la table `user`
 --
 
 DROP TABLE IF EXISTS `user`;
@@ -246,15 +250,15 @@ CREATE TABLE IF NOT EXISTS `user` (
   `etat` int NOT NULL,
   `type` int NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `user`
+-- Déchargement des données de la table `user`
 --
 
 INSERT INTO `user` (`id`, `nom`, `prenom`, `email`, `username`, `password`, `telephone`, `image`, `sexe`, `dateN`, `cin`, `pays`, `ville`, `codePostale`, `adresse`, `etat`, `type`) VALUES
 (1, 'ben hadj khalifa', 'wassim', 'benhadjkhalifawassim@gmail.com', 'admin1', 'admin1', '+21696454585', 'person_3.jpg', 'homme', '1998-09-24', '04455669', 'Tunisie', 'Sousse', '4070', 'msaken', 1, 0),
-(2, 'bouhlel', 'hadil', 'bouhlelhadil1@gmail.com', 'admin2', 'admin2', '+21696454585', 'person_4', 'femme', '1997-09-24', '12835656', 'tunisie', 'Sousse-msaken', '4070', 'rue asyout', 1, 1);
+(2, 'bouhlel', 'hadil', 'bouhlelhadil1@gmail.com', 'admin2', 'admin2', '+21696454585', 'person_4.jpg', 'femme', '1997-09-24', '12835656', 'tunisie', 'Sousse-msaken', '4070', 'rue asyout', 1, 1);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
