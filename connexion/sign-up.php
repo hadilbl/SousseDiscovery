@@ -30,7 +30,7 @@
                           if (isset($_POST['signup'])) {
                       
                             if (isset($_FILES["image"]) && $_FILES["image"]["error"] == 0) {
-                              $targetPath = "../assets/img/"; // Specify the directory where you want to save the uploaded file
+                              $targetPath = "images"; // Specify the directory where you want to save the uploaded file
                               $imageName = $_FILES["image"]["name"];
                               $fileExtension = pathinfo($imageName, PATHINFO_EXTENSION);
                               $image = $imageName;

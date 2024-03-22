@@ -8,7 +8,7 @@ if (isset($_POST['connect'])) {
   if ($currentUser && is_array($currentUser)) {
       if ($currentUser['etat'] == 1) {
           $_SESSION['id'] = $currentUser['id'];
-          if ($currentUser['type'] == 0) {
+          if ($currentUser['type'] == 1) {
               echo '<script>document.location.href="dashboard.php"</script>';
           } else {
               echo '<script>document.location.href="../"</script>';

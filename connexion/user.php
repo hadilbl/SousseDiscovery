@@ -64,12 +64,16 @@
                         <span class="text-secondary text-xs font-weight-bold"><?= $item["dateN"]; ?></span>
                       </td>
                       <td class="align-middle text-center text-sm">
-                        <span class="badge badge-sm bg-gradient-success">Online</span>
+                        <?php if ($item["etat"] == 0) : ?>
+                          <span class="badge badge-sm bg-gradient-danger">Désactiver</span>
+                        <?php else : ?>
+                          <span class="badge badge-sm bg-gradient-success">Activer</span>
+                        <?php endif; ?>
                       </td>
                       <td class="align-middle">
                         <button class="btn btn-link text-secondary mb-0">
                           <button type="button" class="btn btn-link text-secondary mb-0" data-bs-toggle="modal" data-bs-target="#update<?= $item["id"]; ?>">
-                            Edit
+                            Activer/Désactiver
                           </button>
 
                           <button type="button" class="btn btn-link text-secondary mb-0" data-bs-toggle="modal" data-bs-target="#delete<?= $item["id"]; ?>">
@@ -94,7 +98,7 @@
           <div class="modal-content">
             <div class="modal-header">
               <h1 class="modal-title fs-5" id="exampleModalLabel">
-                Éditer Utilisateur
+                Activer/Désactiver Utilisateur
               </h1>
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
@@ -110,19 +114,19 @@
                   <label for="etat" class="col-form-label col-md-3">etat</label>
                   <input type="text" id="etat" name="etat" value="<?= $item["etat"]; ?>" placeholder="<?= $item["etat"]; ?>" required>
                 </div>
-                
+
                 <div class="mb-3">
                   <label for="type" class="col-form-label col-md-3">type</label>
                   <input type="text" id="type" name="type" value="<?= $item["type"]; ?>" placeholder="<?= $item["type"]; ?>" required>
                 </div>
 
 
-                
+
 
               </div>
               <div class="modal-footer">
                 <button type="submit" name="update" value="<?= $item["id"]; ?>" class="btn btn-outline-success">
-                  Activer
+                  Confirmer
                 </button>
                 <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal">
                   Annuler
@@ -165,10 +169,10 @@
     <?php require_once('footerd.php'); ?>
   </div>
   </main>
-  <?php require_once('sidebar.php'); 
+  <?php require_once('sidebar.php');
   require_once('script.php'); ?>
 
- 
+
 </body>
 
 </html>
