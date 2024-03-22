@@ -12,7 +12,7 @@
  
         if (isset($_POST['update'])) {
                 $idreservation = $_POST['update'];
-                echo ($reservationfct->update($idreservation,$_POST['idfor'], $_POST['type'],$_POST['datereservation'],$_POST['periode'] )) ? $success : $danger;
+                echo ($reservationfct->update($idreservation,$_POST['etat'],)) ? $success : $danger;
             }
             
             if (isset($_POST['delete'])) {
@@ -38,6 +38,7 @@
                       <th class="text-uppercase text-secondary text-xxs font-weight-bolder text-center opacity-7 ps-2">Date Début</th>
                       <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Date Fin</th>
                       <th class="text-uppercase text-secondary text-xxs font-weight-bolder text-center opacity-7 ps-2">Date Réservation</th>
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder text-center opacity-7 ps-2">statut</th>
                       <th></th>
                     </tr>
                   </thead>
@@ -78,6 +79,13 @@
                       <td>
                         <p class="text-sm font-weight-bold mb-0"><?= $item["dateReservation"]; ?></p>
                       </td>
+                      <td class="align-middle text-center text-sm">
+                        <?php if ($item["etat"] == 0) : ?>
+                          <span class="badge badge-sm bg-gradient-danger">invalider</span>
+                        <?php else : ?>
+                          <span class="badge badge-sm bg-gradient-success">valider</span>
+                        <?php endif; ?>
+                      </td>
                     
                       <td class="align-middle">
                       <button class="btn btn-link text-secondary mb-0">
@@ -100,9 +108,48 @@
           </div>
         </div>
       </div>
+
       <?php
-            foreach ($all as $i => $item):
-                ?>
+    foreach ($all as $i => $item) :
+    ?>
+      <div class="modal fade" id="update<?= $item["id"]; ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">
+                Confirmation Réservation
+              </h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form action="" method="POST" class="d-flex flex-column">
+              <div class="modal-body row">
+
+                <div class="mb-3">
+                  <label for="type" class="col-form-label col-md-3">Réservation</label>
+                  <input type="text" id="type" name="type" class="col-md-8" value="<?= $item["type"]; ?>" placeholder="<?= $item["id"]; ?>" required>
+                </div>
+
+                <div class="mb-3">
+                  <label for="etat" class="col-form-label col-md-3">etat</label>
+                  <input type="text" id="etat" name="etat" value="<?= $item["etat"]; ?>" placeholder="<?= $item["etat"]; ?>" required>
+                </div>
+
+                
+
+              </div>
+              <div class="modal-footer">
+                <button type="submit" name="update" value="<?= $item["id"]; ?>" class="btn btn-outline-success">
+                  Confirmer
+                </button>
+                <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal">
+                  Annuler
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      
                 
 
 

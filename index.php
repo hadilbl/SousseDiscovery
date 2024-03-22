@@ -7,7 +7,7 @@ require_once('head.php');
 	<div class="container">
 		<div class="row no-gutters slider-text js-fullheight align-items-center" data-scrollax-parent="true">
 			<div class="col-md-7 ftco-animate">
-				<span class="subheading">Bienvenue à Sousse Discovery</span>
+				<span class="subheading" style="font-size: 55px;">Bienvenue à Sousse Discovery</span>
 				<h1 class="mb-4">Découvrez Votre Endroit Préféré Avec Nous</h1>
 				<p class="caps">Voyagez dans tous les coins de Sousse, sans tourner en rond</p>
 			</div>

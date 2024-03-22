@@ -33,7 +33,7 @@ require_once ('navbar.php'); ?>
               <div class="col-lg d-flex">
                 <div class="form-group d-flex w-100 border-0">
                   <div class="form-field w-100 align-items-center d-flex">
-                    <input type="submit" value="Search" class="align-self-stretch form-control btn btn-primary">
+                    <input type="submit" value="Recherche" class="align-self-stretch form-control btn btn-primary">
                   </div>
                 </div>
               </div>

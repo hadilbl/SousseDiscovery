@@ -23,10 +23,19 @@ class reservationfct
         }
         return $table;
     }
+    public function read2()
+{
+    $table = array();
+    $query = mysqli_query($this->db, "SELECT * FROM `reservation` ORDER BY dateReservation DESC LIMIT 6");
+    while ($result = mysqli_fetch_array($query)) {
+        $table[] = $result;
+    }
+    return $table;
+}
     public function create($idfor, $type, $idClient, $dateD, $dateF)
     {
         $dateReservation = date('Y-m-d à H:i');
-        $query = mysqli_prepare($this->db, "INSERT INTO `reservation`(`idfor`, `type`, `idClient`, `dateD`, `dateF`, `dateReservation`, `etat`) VALUES (?, ?, ?, ?, ?, ?, 1)");
+        $query = mysqli_prepare($this->db, "INSERT INTO `reservation`(`idfor`, `type`, `idClient`, `dateD`, `dateF`, `dateReservation`, `etat`) VALUES (?, ?, ?, ?, ?, ?,0)");
     
         mysqli_stmt_bind_param($query, "issssi", $idfor, $type, $idClient, $dateD, $dateF, $dateReservation);
     
@@ -41,9 +50,9 @@ class reservationfct
         }
     }
     
-    public function update($idreservation,$idfor, $type, $datereservation, $periode)
+    public function update($idreservation,$etat)
     {
-        $query = mysqli_query($this->db, "UPDATE `reservation` SET `idfor`='$idfor', `type`='$type' ,`datereservation`='$datereservation','periode'='$periode'  WHERE `id`='$idreservation'");
+        $query = mysqli_query($this->db, "UPDATE `reservation` SET `etat`='$etat'");
       
         if ($query) {
             return true;
@@ -76,12 +85,16 @@ class reservationfct
         }
         return $table;
     }
-    public function getLastInsertedReservationId()
+    public function getCountreservation()
     {
-        $query = mysqli_query($this->db, "SELECT LAST_INSERT_ID() as id");
-        $result = mysqli_fetch_assoc($query);
-        return $result['id'];
+        // Start requet sql to get rows in table inscription
+        $query = mysqli_query($this->db, "SELECT * FROM `reservation` ");
+        // Start requet sql to count rows of $query
+        $nombre = mysqli_num_rows($query);
+        // Return nomber of rows
+        return $nombre;
     }
+
 
 }
 ?>
